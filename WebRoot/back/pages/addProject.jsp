@@ -1,6 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="http://ckfinder.com" prefix="ckfinder"%>
 <%@taglib uri="http://ckeditor.com" prefix="ckeditor"%>
+<<<<<<< HEAD
+=======
+<%@taglib prefix="s" uri="/struts-tags" %>
+>>>>>>> d5bea18d015f03acd17dba41c04407989294e44b
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -487,7 +491,11 @@ document.write(c);
   
   <body>
     <div>
+<<<<<<< HEAD
     <form action="xpj/project_addProject" method="post" >
+=======
+    <form action="xpj/project_addProject" method="post" enctype="multipart/form-data">
+>>>>>>> d5bea18d015f03acd17dba41c04407989294e44b
     
     项目名称: <input  name="pro.pro_title" type="text"  /><br>    
     项目所需基金  <input  name="pro.pro_wantedMoney" type="text"  /><br>
@@ -511,7 +519,11 @@ document.write(c);
     
      
    项目展示图片<!--<input  name="pro.pro_picture" type="file"  /><br>-->
+<<<<<<< HEAD
    <input  name="pro.pro_picture" type="text" /><br>
+=======
+  <s:file name="picture" ></s:file><br>
+>>>>>>> d5bea18d015f03acd17dba41c04407989294e44b
    项目类型<select name="pro.pro_type" >
    <option value="时尚科技">时尚科技</option>
     <option value="创意设计">创意设计</option>

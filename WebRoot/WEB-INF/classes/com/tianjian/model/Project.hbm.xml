@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+
+
+
+	
+	<!-- name指定POJO类，table指定对应数据库的表 -->
+	<class name="com.tianjian.model.Project" table="project">
+		<id name="pro_id" type="java.lang.Integer" ><!-- name指定主键，type指定主键类型 -->
+			<!-- <generator class="foreign"> 采用foreign标志生成器，直接采用外键的属性值 <param name="property">detail</param> 
+				</generator> -->
+		</id>
+		<property name="pro_title" type="java.lang.String" />
+		<property name="pro_wantedMoney"  type="java.lang.Integer"  />
+		<property name="pro_startDate"  type="java.lang.String" />
+		<property name="pro_endDate"  type="java.lang.String" />
+		<property name="userId"  type="java.lang.Integer" />
+		<property name="pro_info"   type="java.lang.String" />
+		<property name="pro_picture"  type="java.lang.String"  />
+		<property name="pro_type" type="java.lang.String"  />
+		<!-- name表示属性名字，class表示被关联的类的名字， constrained="true"表明当前的主键上存在一个外键约束 -->
+		<!-- <one-to-one name="detail" class="com.myd.util.Detail" constrained="true"/> -->
+	</class>
+</hibernate-mapping>

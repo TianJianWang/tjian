@@ -3,7 +3,11 @@ package com.tianjian.model;
 public class Project {
 	private int pro_id;
 	private String pro_title;
+<<<<<<< HEAD
 	private int pro_wangtedMoney;
+=======
+	private int pro_wantedMoney;
+>>>>>>> d5bea18d015f03acd17dba41c04407989294e44b
 	private String pro_startDate;
 	private String pro_endDate;
 	private int userId;
@@ -19,7 +23,11 @@ public class Project {
 		super();
 		this.pro_id = pro_id;
 		this.pro_title = pro_title;
+<<<<<<< HEAD
 		this.pro_wangtedMoney = pro_wangtedMoney;
+=======
+		this.pro_wantedMoney = pro_wangtedMoney;
+>>>>>>> d5bea18d015f03acd17dba41c04407989294e44b
 		this.pro_startDate = pro_startDate;
 		this.pro_endDate = pro_endDate;
 		this.userId = userId;
@@ -27,6 +35,15 @@ public class Project {
 		this.pro_picture = pro_picture;
 		this.pro_type = pro_type;
 	}
+<<<<<<< HEAD
+=======
+	public int getPro_wantedMoney() {
+		return pro_wantedMoney;
+	}
+	public void setPro_wantedMoney(int pro_wantedMoney) {
+		this.pro_wantedMoney = pro_wantedMoney;
+	}
+>>>>>>> d5bea18d015f03acd17dba41c04407989294e44b
 	public int getPro_id() {
 		return pro_id;
 	}
@@ -39,12 +56,17 @@ public class Project {
 	public void setPro_title(String pro_title) {
 		this.pro_title = pro_title;
 	}
+<<<<<<< HEAD
 	public int getPro_wangtedMoney() {
 		return pro_wangtedMoney;
 	}
 	public void setPro_wangtedMoney(int pro_wangtedMoney) {
 		this.pro_wangtedMoney = pro_wangtedMoney;
 	}
+=======
+	 
+	 
+>>>>>>> d5bea18d015f03acd17dba41c04407989294e44b
 	public String getPro_startDate() {
 		return pro_startDate;
 	}
@@ -84,7 +106,11 @@ public class Project {
 	@Override
 	public String toString() {
 		return "Project [pro_id=" + pro_id + ", pro_title=" + pro_title
+<<<<<<< HEAD
 				+ ", pro_wangtedMoney=" + pro_wangtedMoney + ", pro_startDate="
+=======
+				+ ", pro_wangtedMoney=" + pro_wantedMoney + ", pro_startDate="
+>>>>>>> d5bea18d015f03acd17dba41c04407989294e44b
 				+ pro_startDate + ", pro_endDate=" + pro_endDate + ", userId="
 				+ userId + ", pro_info=" + pro_info + ", pro_picture="
 				+ pro_picture + ", pro_type=" + pro_type + "]";

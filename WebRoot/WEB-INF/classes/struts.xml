@@ -4,6 +4,10 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+<<<<<<< HEAD
 <include file="chen.xml"></include>
+=======
+<include file="xpj.xml"></include>
+>>>>>>> d5bea18d015f03acd17dba41c04407989294e44b
 
 </struts>

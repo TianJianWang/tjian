@@ -24,8 +24,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
    <textarea cols="80" id="editor1" name="content1" rows="10"></textarea>
+<<<<<<< HEAD
 			<input type="submit" value="Submit" id="submit" onclick="return check();" />
 		</form>
+=======
+			<input type="submit" value="Submit" id="submit"  />
+		
+>>>>>>> d5bea18d015f03acd17dba41c04407989294e44b
 		<ckfinder:setupCKEditor basePath="/tinajianwang/ckfinder/"
 			editor="editor1" />
 		<ckeditor:replace replace="editor1"
