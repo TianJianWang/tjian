@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.tianjian.model.Type" table="type">
+       	<id name="type_id" type="integer"><!-- name指定主键，type指定主键类型 -->
+      	<generator class="increment"></generator>
+      	</id>
+	<property name="type_leval" type="integer" />
+         	
+         <property name="type_name" type="string" />
+      	<property name="type_up_id" type="integer" />
+      	<set name="services">
+      	<key column="type_id"></key>
+      	<one-to-many class="com.tianjian.model.Service"  ></one-to-many>
+      	</set>
+
+         
+      	
+   	</class>
+</hibernate-mapping>
