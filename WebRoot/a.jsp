@@ -1,3 +1,3 @@
 <%
-out.print("java Hello!!0506");
+out.print("java");
 %>

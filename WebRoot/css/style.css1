@@ -35,11 +35,7 @@ p {margin-bottom:18px}
 .margin-bot {margin-bottom:35px}
 .spacing {margin-right:35px}
 .indent {padding:0 0 0px 32px}
-.indent2 {
-	padding-top: 10px;
-	font-size: 18pt;
-	line-height:20pt
-}
+.indent2 {padding-top:10px}
 .indent3 {padding-top:38px}
 .indent4 {padding:26px 0 0px 32px}
 .indent5 {padding-top:22px}
@@ -61,14 +57,7 @@ header {width:100%;margin-bottom:-16px;position:relative;z-index:1}
 .row-2 {width:100%;min-height:85px;position:relative;z-index:1}
 .row-3 {width:100%;min-height:417px;position:relative;z-index:2}
 h1 {padding:0px 0 0 40px;position:relative;float:left}
-.logo {
-	display: block;
-	width: 438px;
-	height: 142px;
-	text-indent: -5000px;
-	background: url(../images/logo.png) 0 0 no-repeat;
-	margin: -10px 0 8px 0
-}
+.logo {display:block;width:238px;height:142px;text-indent:-5000px;background:url(../images/logo.png) 0 0 no-repeat;margin:-10px 0 8px 0}
 .slog {display:block;font-size:14px;line-height:1.2em;color:#8a8a8a;text-transform:uppercase;letter-spacing:-1px}
 /* search-form */
 #search-form {width:244px;min-height:39px;padding:20px;margin-right:19px;background:#000;border-radius:18px;-moz-border-radius:18px;-webkit-border-radius:18px;float:right}
@@ -147,11 +136,6 @@ dl.contact dt, dl.contact dd {margin-bottom:5px}
 #contact-form {display:block}
 #contact-form  label {display:block;height:30px;overflow:hidden}
 #contact-form  input {float:left;width:526px;font-size:13px;line-height:1.23em;color:#0f0f0f;padding:4px 10px;margin:0;font-family:Arial, Helvetica, sans-serif;border:1px solid #ebebeb;background:none}
-#contact-form  input#date {float:left;width:86px;}
-#contact-form  input#money {
-	float: left;
-	width: 272px;
-}
 #contact-form textarea {height:262px;overflow:auto;float:left;width:526px;font-size:13px;line-height:1.23em;color:#0f0f0f;padding:4px 10px;margin:0;font-family:Arial, Helvetica, sans-serif;border:1px solid #ebebeb;background:none}
 .text-form {float:left;display:block;font-size:14px;width:73px;line-height:1.78em;color:#0f0f0f}
 .buttons {padding-top:16px;text-align:right}
