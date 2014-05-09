@@ -41,6 +41,52 @@ public class ProjectDao {
 	
 	
 	
+	
+	
+	
+	public String deleteProject(Project pro){
+				
+		
+		
+    String flag="deleteprojecterror";
+		 HibernateSessionFactory hibernateSessionFactory=new HibernateSessionFactory();
+		 Session session=HibernateSessionFactory.getsSession();
+		 //   System.out.println(session);
+		
+		    try {
+				Transaction ts=session.beginTransaction();
+				
+				
+				Query query=session.createQuery(" delete from Project where Project.Pro_id=?");
+				
+				query.setInteger(0, pro.getPro_id()).executeUpdate();
+				
+				   ts.commit();  
+				   System.out.println("dao中的删除项目的方法session："+session);
+				   HibernateSessionFactory.closeSession();
+				   
+				   
+				   
+				   flag="deleteprojectsuccess";
+						   
+			} catch (HibernateException e) {
+			
+				e.printStackTrace();
+			}			    			      		    
+		    
+		    /*
+		     * 
+		     * String sql="select * from user_table where username=? and password=?"
+		     *  SQLQuery query=getSession().createSQLQuery(sql).addEntity(UserTable.class);
+                query.setString(0,username);
+   query.setString(1,password);
+		     * */
+		   // session.update(pro);
+		return flag;
+		
+		
+	}
+	
 	public String updateproject( Project pro){
 		 
 		String flag="updateerror";
@@ -123,12 +169,7 @@ public class ProjectDao {
 				} catch (HibernateException e) {
 				
 					e.printStackTrace();
-					
-				}
-			    
-			    
-			    
-			    
+				}			    			      		    
 			    
 			    /*
 			     * 

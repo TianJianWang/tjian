@@ -1,6 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="http://ckfinder.com" prefix="ckfinder"%>
 <%@taglib uri="http://ckeditor.com" prefix="ckeditor"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -487,7 +488,7 @@ document.write(c);
   
   <body>
     <div>
-    <form action="xpj/project_addProject" method="post" >
+    <form action="xpj/project_addProject" method="post" enctype="multipart/form-data">
     
     项目名称: <input  name="pro.pro_title" type="text"  /><br>    
     项目所需基金  <input  name="pro.pro_wantedMoney" type="text"  /><br>
@@ -511,7 +512,7 @@ document.write(c);
     
      
    项目展示图片<!--<input  name="pro.pro_picture" type="file"  /><br>-->
-   <input  name="pro.pro_picture" type="text" /><br>
+  <s:file name="picture" ></s:file><br>
    项目类型<select name="pro.pro_type" >
    <option value="时尚科技">时尚科技</option>
     <option value="创意设计">创意设计</option>

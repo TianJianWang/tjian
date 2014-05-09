@@ -24,6 +24,24 @@ public class ProjectService {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	public String deleteproject(Project pro){
+		String flag=prod.deleteProject(pro);
+		
+		System.out.println("service 中的删除方法"+flag);
+		
+		
+		
+		return flag;
+	}
+	
 	 
 	
 	
@@ -47,6 +65,12 @@ public class ProjectService {
 	
 	
 
+	public ArrayList listallmyProject(){
+		projectList=prod.listallmyProject();
+		System.out.println("Service中的查询个人所有项目的方法：");
+	
+	return projectList;
+	}
 	
 	
 	

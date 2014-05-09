@@ -4,12 +4,21 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+  <!-- 指定国际化资源文件的baseName为messageResource -->
+     <constant name="struts.custom.i18n.resources" value="messageResource"/>
+    <!-- 设置该应用使用的解码集 -->
+     <constant name="struts.i18n.encoding" value="utf-8"/>
+     <!-- 上传的全部图片的最大限制-->
+     <constant name="struts.multipart.maxSize" value="1024102400"/>
+<constant name="struts.multipart.saveDir" value="/temp" />
 <package name="xpj" namespace="/xpj" extends="struts-default">
 <action name="project_*" class="com.tianjian.action.ProjectAction" method="{1}">
 <result name="adderror">/back/pages/addProject.jsp</result>
 <result name="addsuccess" type="redirect">/back/pages/addsuccess.jsp</result>
 <result name="querysuccess">/front/pages/list.jsp</result>
-        <!--  <result name="detailProject">/back/pages/detailProject.jsp</result>-->
+<result name="listallmyProject">/back/pages/listallmyProject.jsp</result>
+<result name="deleteprojecterror" >/back/pages/listallmyProject.jsp</result>
+<result name="deleteprojectsuccess" >/back/pages/deleteprojectsuccess.jsp</result>
 </action>
 
 </package>

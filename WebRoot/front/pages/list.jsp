@@ -124,7 +124,7 @@ table.tbcss,table.tbcss td {
 											<ul class="project-one">
 												<li class="project-pic"><a href="#"
 													title="<s:property value="#list.pro_title"/>"><img
-														src="<s:property value="#list.pro_picture"/>" width="223"
+														src="myimages/<s:property value="#list.pro_picture"/>" width="223"
 														height="165"></a></li>
 												<li class="project-title"><a href="#"> <s:property  value="#list.pro_title" />
 												</a></li>
