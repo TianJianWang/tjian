@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<package name="xpj" namespace="/xpj" extends="struts-default">
+<action name="project_*" class="com.tianjian.action.ProjectAction" method="{1}">
+<result name="adderror">/back/pages/addProject.jsp</result>
+<result name="addsuccess" type="redirect">/back/pages/addsuccess.jsp</result>
+<result name="querysuccess">/front/pages/list.jsp</result>
+        <!--  <result name="detailProject">/back/pages/detailProject.jsp</result>-->
+</action>
+
+</package>
+</struts>
