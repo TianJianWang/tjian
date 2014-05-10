@@ -63,13 +63,15 @@ header {width:100%;margin-bottom:-16px;position:relative;z-index:1}
 h1 {padding:0px 0 0 40px;position:relative;float:left}
 .logo {
 	display: block;
-	width: 438px;
+	width: 388px;
 	height: 142px;
 	text-indent: -5000px;
 	background: url(../images/logo.png) 0 0 no-repeat;
 	margin: -10px 0 8px 0
 }
 .slog {display:block;font-size:14px;line-height:1.2em;color:#8a8a8a;text-transform:uppercase;letter-spacing:-1px}
+.qqLoginBtn {float:left;}
+.top-login-btn-container {float:left;visibility: hidden;}
 /* search-form */
 #search-form {width:244px;min-height:39px;padding:20px;margin-right:19px;background:#000;border-radius:18px;-moz-border-radius:18px;-webkit-border-radius:18px;float:right}
 .search-form {background:#fefefe;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;width:100%;overflow:hidden}
