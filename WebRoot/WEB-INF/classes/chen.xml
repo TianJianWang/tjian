@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<package name="service" extends="struts-default" namespace="/service">
+<action name="service_*" class="com.tianjian.action.ServiceAction" method="{1}">
+<result name="backDetailService">/back/pages/backDetailService.jsp</result>
+<result name="backShortService" >/back/pages/backListService.jsp</result>
+<result name="success" >/back/pages/backtips.jsp</result>
+<result name="fail">/back/pages/backtips.jsp</result>
+</action>
+
+</package>
+
+</struts>

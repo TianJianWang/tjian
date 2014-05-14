@@ -13,16 +13,20 @@
 	<property name="connection.password">root</property>
 	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 	<property name="myeclipse.connection.profile">com.mysql.jdbc.Driver</property>
-	
-	
-	
+
+
+
+
+	<mapping resource="com/tianjian/model/Type.hbm.xml" />
+ <mapping resource="com/tianjian/model/Service.hbm.xml" />
+
 	<mapping resource="com/tianjian/model/SalePre.hbm.xml" />
 	<mapping resource="com/tianjian/model/Finance.hbm.xml" />
 	<mapping resource="com/tianjian/model/FinanceItem.hbm.xml" />
 	<mapping resource="com/tianjian/model/Team.hbm.xml" />
 	<mapping resource="com/tianjian/model/TeamUser.hbm.xml" />
 	<mapping resource="com/tianjian/model/TeamApply.hbm.xml" />
- 
+
 </session-factory>
 
 </hibernate-configuration>
