@@ -100,7 +100,7 @@ public class ProjectAction {
 		String flat=pros.addProject(pro);
 		ActionContext ac = ActionContext.getContext();
 		ac.getSession().put("project",pro);
-		System.out.println("action 中 添加项目的方法 " +flat);
+		System.out.println("action 涓�娣诲姞椤圭洰鐨勬柟娉�" +flat);
 		return flat;		
 	
 	}
@@ -110,7 +110,7 @@ public class ProjectAction {
 	
 	public String deleteproject(){
 		String flag=pros.deleteproject(pro);
-		System.out.println("action 中的删除方法"+flag);
+		System.out.println("action 涓殑鍒犻櫎鏂规硶"+flag);
 		return flag;
 		
 	}
@@ -120,16 +120,16 @@ public class ProjectAction {
 
 	public String updateProject(){
 		String flag=pros.updateProject(pro);
-		System.out.println("action 中 修改项目的方法 " +flag);
+		System.out.println("action 涓�淇敼椤圭洰鐨勬柟娉�" +flag);
 		return flag;
 	}
 		
 	
 	public String queryProject(){
 		
-			   //返回的是一个集合
+			   //杩斿洖鐨勬槸涓�釜闆嗗悎
 		projectList=pros.queryProject();
-		System.out.println("action 中 查询项目的方法 " +projectList);
+		System.out.println("action 涓�鏌ヨ椤圭洰鐨勬柟娉�" +projectList);
 			 
 		return "querysuccess";
 	
@@ -137,9 +137,9 @@ public class ProjectAction {
 	
 	public String listallmyProject(){
 		
-			   //返回的是一个集合
+			   //杩斿洖鐨勬槸涓�釜闆嗗悎
 		projectList=pros.queryProject();
-		System.out.println("action 中 查寻个人所有项目的方法 " +projectList);
+		System.out.println("action 涓�鏌ュ涓汉鎵�湁椤圭洰鐨勬柟娉�" +projectList);
 			 
 		return "listallmyProject";
 	
