@@ -16,6 +16,7 @@ public class TeamDao {
 	private Team team;
 	private TeamUser teamUser;
 	private TeamApply teamApply;
+	private ArrayList<Team> teamList;
 	private ArrayList<TeamUser> teamUserList;
 	private ArrayList<TeamApply> applyList;
 	
@@ -81,6 +82,20 @@ public class TeamDao {
 	    session.close();
 		return flat;
 	}
+	public boolean addTeamApply(TeamApply apply){
+		boolean flat=false;
+		Session session=HibernateSessionFactory.getsSession();
+		try {
+			Transaction ts= session.beginTransaction();
+			session.save(apply);
+			flat=true;
+			ts.commit();
+		} catch ( Exception e) {
+			e.printStackTrace();
+		}  
+		session.close();
+		return flat;
+	}
 	public ArrayList<TeamUser> listTeamUserByTeam(int team_id){
 		  Session session=HibernateSessionFactory.getsSession();
 		    Transaction ts= session.beginTransaction();
@@ -93,6 +108,19 @@ public class TeamDao {
 		}  
 		    session.close();
 		return teamUserList;
+	}
+	public ArrayList<Team> listTeam(){
+		Session session=HibernateSessionFactory.getsSession();
+		Transaction ts= session.beginTransaction();
+		teamList=(ArrayList<Team>) session.createQuery("from Team").list();
+		System.out.println("ºØ∫œ÷–"+teamUser);
+		try {
+			ts.commit();
+		} catch ( Exception e) {
+			e.printStackTrace();
+		}  
+		session.close();
+		return teamList;
 	}
 	public boolean deleteTeamUser(int id){
 		boolean flat=false;

@@ -79,7 +79,7 @@
 							<li><a href="front/pages/index.jsp">Home Page</a></li>
 							<li><a href="front/pages/list.jsp">Order and Invest</a></li>
 							<li><a href="front/pages/services.jsp">Audit Accounts</a></li>
-							<li><a class="active" href="front/pages/products.jsp">Join Projects</a></li>
+							<li><a class="active" href="ming/team_listTeam">Join Projects</a></li>
 							<li class="last-item"><a href="front/pages/contacts.jsp">Submit
 									Project</a></li>
 						</ul>

@@ -17,8 +17,7 @@
 
 
 
-	<mapping resource="com/tianjian/model/Type.hbm.xml" />
- <mapping resource="com/tianjian/model/Service.hbm.xml" />
+	
 
 	<mapping resource="com/tianjian/model/SalePre.hbm.xml" />
 	<mapping resource="com/tianjian/model/Finance.hbm.xml" />

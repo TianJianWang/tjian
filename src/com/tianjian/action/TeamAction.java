@@ -1,6 +1,7 @@
 package com.tianjian.action;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import com.tianjian.model.Team;
 import com.tianjian.model.TeamApply;
@@ -9,25 +10,39 @@ import com.tianjian.service.TeamService;
 
 public class TeamAction {
 	private Team team;
-	private TeamApply teamApply;
+	private TeamApply apply;
 	private TeamUser teamUser;
+	private ArrayList<Team> teamList;
 	private ArrayList<TeamApply> applyList;
 	private ArrayList<TeamUser> teamUserList;
 	private TeamService service;
 	private int team_id;
 	private int id;//TeamUser  id
 	private long teamUserCount;
+	
+	public ArrayList<Team> getTeamList() {
+		return teamList;
+	}
+	public void setTeamList(ArrayList<Team> teamList) {
+		this.teamList = teamList;
+	}
+	public long getTeamUserCount() {
+		return teamUserCount;
+	}
+	public void setTeamUserCount(long teamUserCount) {
+		this.teamUserCount = teamUserCount;
+	}
 	public Team getTeam() {
 		return team;
 	}
 	public void setTeam(Team team) {
 		this.team = team;
 	}
-	public TeamApply getTeamApply() {
-		return teamApply;
+	public TeamApply getApply() {
+		return apply;
 	}
-	public void setTeamApply(TeamApply teamApply) {
-		this.teamApply = teamApply;
+	public void setApply(TeamApply apply) {
+		this.apply = apply;
 	}
 	public TeamUser getTeamUser() {
 		return teamUser;
@@ -62,11 +77,28 @@ public class TeamAction {
 		this.id = id;
 	}
 	//查询项目组信息 及成员人数
+	public String listTeam(){
+		service=new TeamService();
+		teamList=service.listTeam();
+		teamUserCount=service.listTeamUserCount(team_id)+1;
+		return "listTeam";
+		
+	}
 	public String listTeamById(){
 		service=new TeamService();
 		team=service.listTeamById(team_id);
 		teamUserCount=service.listTeamUserCount(team_id)+1;
 		return "listTeamById";
+	}
+	public String listTeamDetail(){
+		service=new TeamService();
+		team=service.listTeamById(team_id);
+		teamUserCount=service.listTeamUserCount(team_id)+1;
+		//listProjectById
+		
+		//listUserById
+		
+		return "listTeamDetail";
 	}
 	//添加（创建） 项目组
 	public String addTeam(){
@@ -100,6 +132,18 @@ public class TeamAction {
 			return "deleteTeamUser";
 		}else
 		return "fail";
+	}
+	public String addTeamApply(){
+		if(apply.getTime()==null||"".equals(apply.getTime())){
+			apply.setTime(new Date().toGMTString());
+		}
+		service=new TeamService();
+		boolean flat=service.addTeamApply(apply);
+		if(flat){
+			return "addTeamApply";
+		}else
+		return "fail";
+		
 	}
 	public String listTeamApplyByTeam(){
 		service=new TeamService();

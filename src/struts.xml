@@ -26,8 +26,11 @@
 
 <action name="team_*" class="com.tianjian.action.TeamAction" method="{1}">
     <result name="addTeam">/addTeam.jsp</result>
-    <result name="listTeamById">/team.jsp</result>
+    <result name="listTeam">/front/pages/listTeam.jsp</result>
+    <result name="listTeamById">/front/pages/teamApply.jsp</result>
     <result name="listTeamUserByTeam">/front/frontpages/teamUserList.jsp</result>
+    <result name="listTeamDetail">/front/pages/listTeamDetail.jsp</result>
+    <result name="addTeamApply">/success.jsp</result>
     
 </action>
 </package>

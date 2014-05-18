@@ -4,3 +4,5 @@ encoding//WebRoot/back/pages/listallmyProject.jsp=UTF-8
 encoding//src/com/tianjian/action/ProjectAction.java=UTF-8
 encoding//src/com/tianjian/action/ServiceAction.java=UTF-8
 encoding//src/com/tianjian/dao/ProjectDao.java=UTF-8
+encoding//src/com/tianjian/service/ProjectService.java=UTF-8
+encoding//src/com/tianjian/util/Picture.java=UTF-8

@@ -11,6 +11,7 @@ public class TeamService {
 	private Team team;
 	private TeamUser teamUser;
 	private TeamApply teamApply;
+	private ArrayList<Team> teamList;
 	private ArrayList<TeamUser> teamUserList;
 	private ArrayList<TeamApply> applyList;
 	private TeamDao dao;
@@ -31,7 +32,11 @@ public class TeamService {
 		return flat;
 		
 	}
-	
+	public ArrayList<Team> listTeam(){
+		dao=new TeamDao();
+		teamList=dao.listTeam();
+		return teamList;
+	}
 	public boolean addTeamUser(TeamUser teamUser){
 		dao=new TeamDao();
 		team=dao.listTeamById(teamUser.getTeam_id());
@@ -54,6 +59,12 @@ public class TeamService {
 //			dao.updateTeam(team);
 //		}
 		return flat;
+	}
+	public boolean addTeamApply(TeamApply apply){
+		dao=new TeamDao();
+		boolean flat=dao.addTeamApply(apply);
+		return flat;
+		
 	}
 	public ArrayList<TeamUser> listTeamUserByTeam(int team_id){
 		dao=new TeamDao();

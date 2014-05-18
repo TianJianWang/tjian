@@ -22,12 +22,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
   </head>
   <body> 
-         <s:iterator value="salepreList" var="list">
-         <s:property value="#list.type_post"/>&nbsp;&nbsp;
-         <s:property value="#list.pre_money"/>&nbsp;&nbsp;
-         <s:property value="#list.pre_info" escape="false"/>&nbsp;&nbsp;
-         <a href="ming/pre_listSalepreById?method=Front&pre_id=<s:property value="#list.pre_id"/>">修改</a>
-         <a href="ming/pre_deleteSalepreById?method=Front&pre_id=<s:property value="#list.pre_id"/>">删除</a><br>
-         </s:iterator>
+        申请已递交，等待评定！<a href="ming/team_listTeam">继续浏览团队</a>
   </body>
 </html>

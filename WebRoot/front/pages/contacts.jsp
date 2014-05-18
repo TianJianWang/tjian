@@ -543,7 +543,7 @@ document.write(c);
 						  <li><a href="front/pages/index.jsp">Home Page</a></li>
 						  <li><a href="front/pages/list.jsp">Order and Invest</a></li>
 						  <li><a href="front/pages/services.jsp">Audit Accounts</a></li>
-						  <li><a href="font/pages/products.jsp">Join Projects</a></li>
+						  <li><a href="ming/team_listTeam">Join Projects</a></li>
 						  <li class="last-item"><a  class="active" href="front/pages/contacts.jsp">Submit Project</a></li>
 						</ul>
 					</nav>
