@@ -6,10 +6,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse; 
 import javax.servlet.http.HttpServletRequest; 
 import org.apache.struts2.dispatcher.FilterDispatcher;
-
  
-
-
 public class FCKFilter extends FilterDispatcher {
 
     public void doFilter(ServletRequest req,ServletResponse res, FilterChain chain) throws IOException, ServletException {   

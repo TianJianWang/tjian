@@ -3,7 +3,7 @@ package com.tianjian.model;
 public class Project {
 	private int pro_id;
 	private String pro_title;
-	private int pro_wantedMoney;
+	private int pro_wangtedMoney;
 	private String pro_startDate;
 	private String pro_endDate;
 	private int userId;
@@ -19,19 +19,13 @@ public class Project {
 		super();
 		this.pro_id = pro_id;
 		this.pro_title = pro_title;
-		this.pro_wantedMoney = pro_wangtedMoney;
+		this.pro_wangtedMoney = pro_wangtedMoney;
 		this.pro_startDate = pro_startDate;
 		this.pro_endDate = pro_endDate;
 		this.userId = userId;
 		this.pro_info = pro_info;
 		this.pro_picture = pro_picture;
 		this.pro_type = pro_type;
-	}
-	public int getPro_wantedMoney() {
-		return pro_wantedMoney;
-	}
-	public void setPro_wantedMoney(int pro_wantedMoney) {
-		this.pro_wantedMoney = pro_wantedMoney;
 	}
 	public int getPro_id() {
 		return pro_id;
@@ -45,8 +39,12 @@ public class Project {
 	public void setPro_title(String pro_title) {
 		this.pro_title = pro_title;
 	}
-	 
-	 
+	public int getPro_wangtedMoney() {
+		return pro_wangtedMoney;
+	}
+	public void setPro_wangtedMoney(int pro_wangtedMoney) {
+		this.pro_wangtedMoney = pro_wangtedMoney;
+	}
 	public String getPro_startDate() {
 		return pro_startDate;
 	}
@@ -86,7 +84,7 @@ public class Project {
 	@Override
 	public String toString() {
 		return "Project [pro_id=" + pro_id + ", pro_title=" + pro_title
-				+ ", pro_wangtedMoney=" + pro_wantedMoney + ", pro_startDate="
+				+ ", pro_wangtedMoney=" + pro_wangtedMoney + ", pro_startDate="
 				+ pro_startDate + ", pro_endDate=" + pro_endDate + ", userId="
 				+ userId + ", pro_info=" + pro_info + ", pro_picture="
 				+ pro_picture + ", pro_type=" + pro_type + "]";

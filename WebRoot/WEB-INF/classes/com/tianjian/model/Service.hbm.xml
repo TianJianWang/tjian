@@ -3,13 +3,13 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 <!-- name指定POJO类，table指定对应数据库的表 -->
+  
     <class name="com.tianjianwang.model.Service" table="service">
        	<id name="ser_id"><!-- name指定主键，type指定主键类型 -->
      <!--  <generator class="foreign"> 采用foreign标志生成器，直接采用外键的属性值 <param name="property">detail</param> </generator> -->
       	</id>
-	<property name="com_name"  />
-         	
-      	<property name="score"  />
+	    <property name="com_name"  />
+      	 <property name="score"  />
          <property name="com_info"  />
          <property name="shor_info"  />
          <property name="com_url"  />
@@ -18,4 +18,5 @@
       		constrained="true"表明当前的主键上存在一个外键约束-->
       <!--  <one-to-one name="detail" class="com.myd.util.Detail" constrained="true"/>-->	
    	</class>
+
 </hibernate-mapping>

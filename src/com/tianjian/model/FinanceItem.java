@@ -9,7 +9,6 @@ public class FinanceItem {
 	private String item_time;
 	private String item_person;
 	private String invoice_pic;
-
 	public FinanceItem() {
 		// TODO Auto-generated constructor stub
 	}
@@ -100,7 +99,6 @@ public class FinanceItem {
 				+ ", item_person=" + item_person + ", invoice_pic="
 				+ invoice_pic + "]";
 	}
-
 
 
 }

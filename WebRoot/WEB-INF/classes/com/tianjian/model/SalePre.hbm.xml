@@ -12,7 +12,6 @@
          <property name="pre_money" type="integer" />
          <property name="pre_limit" type="integer" />
          <property name="pre_info"  type="string"/>
-         
       	<!-- name表示属性名字，class表示被关联的类的名字，
       		constrained="true"表明当前的主键上存在一个外键约束-->
       <!--  <one-to-one name="detail" class="com.myd.util.Detail" constrained="true"/>-->	

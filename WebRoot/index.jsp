@@ -1,7 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib uri="http://ckfinder.com" prefix="ckfinder"%>
 <%@taglib uri="http://ckeditor.com" prefix="ckeditor"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,9 +9,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-  
-  
-  
     <base href="<%=basePath%>">
     
     <title>My JSP 'index.jsp' starting page</title>
@@ -27,20 +23,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <!-- 此部分为通过jstl语言判断页面是否通过Action之后跳转到该页面 -->
-  
-  
-  <c:if test="${empty SessionScope.projectList} " >
-  
-    <c:redirect url="ProjectAction!queryProject.action"></c:redirect>
-    <c>
-  </c:if>>
+  <form action="">
    <textarea cols="80" id="editor1" name="content1" rows="10"></textarea>
-			<input type="submit" value="Submit" id="submit"  />
+			<input type="submit" value="Submit" id="submit" onclick="return check();" />
 		
 		<ckfinder:setupCKEditor basePath="/tinajianwang/ckfinder/"
 			editor="editor1" />
 		<ckeditor:replace replace="editor1"
 			basePath="/tianjianwang/ckeditor/" />
+		</form>	
+	<a href="ming/pre_listSalepre">查询与销售信息</a>
+	<a href="addSalepre.jsp">添加与销售信息</a>
+	<a href="ming/finance_listFinance">查看账单</a>
+	<a href="ming/finance_isFinance?pro_id=20">添加账单</a>
+	<a href="ming/team_listTeamById?team_id=1">查看项目组队</a>
+	<a href="addTeam.jsp">添加项目组</a>
+	
   </body>
 </html>

@@ -1,7 +1,8 @@
 /.project
 .db
+.jar
 .classpath
 .mymetadata
 .settings
 .myeclipse
-.jar
+WebRoot/WEB-INF/classes
