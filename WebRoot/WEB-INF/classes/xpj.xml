@@ -17,8 +17,9 @@
 <result name="addsuccess" type="redirect">/back/pages/addsuccess.jsp</result>
 <result name="querysuccess">/front/pages/list.jsp</result>
 <result name="listallmyProject">/back/pages/listallmyProject.jsp</result>
-<result name="deleteprojecterror" >/back/pages/listallmyProject.jsp</result>
+<result name="updatesuccess" >/back/pages/updatesuccess.jsp</result>
 <result name="deleteprojectsuccess" >/back/pages/deleteprojectsuccess.jsp</result>
+<result name="listdetailbyid" >/back/pages/listdetailbyid.jsp</result>
 </action>
 
 </package>

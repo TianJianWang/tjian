@@ -37,12 +37,20 @@
             /ckfinder/core/connector/java/connector.java
         </url-pattern>
   </filter-mapping>
+  
   <session-config>
     <session-timeout>10</session-timeout>
   </session-config>
+  
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+  </welcome-file-list> 
+  
+  <error-page>
+    <error-code>404</error-code>
+    <location>/back/pages/404.jsp</location>
+</error-page>
+  
   <filter>
     <filter-name>struts2</filter-name>
    <!-- <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class> --> 

@@ -27,9 +27,20 @@ public class ProjectAction {
 	private ProjectService pros;
 	private ArrayList projectList;
 	private File picture;
+    private int pro_id;
 	String pictureFileName;
 	String pictureContentType;
 	
+	public int getPro_id() {
+		return pro_id;
+	}
+
+
+	public void setPro_id(int pro_id) {
+		this.pro_id = pro_id;
+	}
+
+
 	public File getPicture() {
 		return picture;
 	}
@@ -100,7 +111,7 @@ public class ProjectAction {
 		String flat=pros.addProject(pro);
 		ActionContext ac = ActionContext.getContext();
 		ac.getSession().put("project",pro);
-		System.out.println("action 涓�娣诲姞椤圭洰鐨勬柟娉�" +flat);
+		System.out.println("action 中 添加项目的方法 " +flat);
 		return flat;		
 	
 	}
@@ -108,28 +119,36 @@ public class ProjectAction {
 	
 	
 	
-	public String deleteproject(){
-		String flag=pros.deleteproject(pro);
-		System.out.println("action 涓殑鍒犻櫎鏂规硶"+flag);
+	public String deleteProject(){
+		
+		
+		String flag=pros.deleteproject(pro_id);
+		
+		
+		
+		System.out.println("action 中的删除方法"+flag);
 		return flag;
 		
 	}
 	
+
 	
-	
+
+
 
 	public String updateProject(){
 		String flag=pros.updateProject(pro);
-		System.out.println("action 涓�淇敼椤圭洰鐨勬柟娉�" +flag);
+		System.out.println("action 中 修改项目的方法 " +flag);
 		return flag;
+		
 	}
 		
 	
 	public String queryProject(){
 		
-			   //杩斿洖鐨勬槸涓�釜闆嗗悎
+			   //返回的是一个集合
 		projectList=pros.queryProject();
-		System.out.println("action 涓�鏌ヨ椤圭洰鐨勬柟娉�" +projectList);
+		System.out.println("action 中 查询项目的方法 " +projectList);
 			 
 		return "querysuccess";
 	
@@ -137,16 +156,25 @@ public class ProjectAction {
 	
 	public String listallmyProject(){
 		
-			   //杩斿洖鐨勬槸涓�釜闆嗗悎
-		projectList=pros.queryProject();
-		System.out.println("action 涓�鏌ュ涓汉鎵�湁椤圭洰鐨勬柟娉�" +projectList);
-			 
+			   //返回的是一个集合
+		projectList=pros.listallmyProject();
+		System.out.println("action 中 查寻个人所有项目的方法 " +projectList);
+			 ServletActionContext.getRequest().setAttribute("count", 10);
 		return "listallmyProject";
 	
 	}
 	
 	
+	public String listdetailbyid(){
+		
+		   //返回的是一个集合
+System.out.println("action 中 通过id查寻一个项目的方法 " +pro.getPro_id());
+	projectList=pros.listdetailbyid(pro.getPro_id());
+	System.out.println("action 中 通过id查寻一个项目的方法 " +projectList);
+		 
+	return "listdetailbyid";
 
+}
 	
 	
 	
