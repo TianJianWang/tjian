@@ -104,7 +104,7 @@ table.tbcss, table.tbcss td {
                       <div class="projectstats">
                         <p class="widtha"><strong>0%</strong>已达到</p>
                         <p class="widthb"><strong><span><b>¥</b>245</span></strong>已获支持</p>
-                        <p class="widthd"><strong>11/08/20</strong>结束时间</p>
+                        <p class="widthd"><strong><s:date name="#list.pro_endDate" nice="ture"/></hr></strong>结束时间</p>
                       </div>
                     </li>
                   </ul>

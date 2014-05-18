@@ -27,9 +27,20 @@ public class ProjectAction {
 	private ProjectService pros;
 	private ArrayList projectList;
 	private File picture;
+    private int pro_id;
 	String pictureFileName;
 	String pictureContentType;
 	
+	public int getPro_id() {
+		return pro_id;
+	}
+
+
+	public void setPro_id(int pro_id) {
+		this.pro_id = pro_id;
+	}
+
+
 	public File getPicture() {
 		return picture;
 	}
@@ -108,20 +119,28 @@ public class ProjectAction {
 	
 	
 	
-	public String deleteproject(){
-		String flag=pros.deleteproject(pro);
+	public String deleteProject(){
+		
+		
+		String flag=pros.deleteproject(pro_id);
+		
+		
+		
 		System.out.println("action 中的删除方法"+flag);
 		return flag;
 		
 	}
 	
+
 	
-	
+
+
 
 	public String updateProject(){
 		String flag=pros.updateProject(pro);
 		System.out.println("action 中 修改项目的方法 " +flag);
 		return flag;
+		
 	}
 		
 	
@@ -138,15 +157,24 @@ public class ProjectAction {
 	public String listallmyProject(){
 		
 			   //返回的是一个集合
-		projectList=pros.queryProject();
+		projectList=pros.listallmyProject();
 		System.out.println("action 中 查寻个人所有项目的方法 " +projectList);
-			 
+			 ServletActionContext.getRequest().setAttribute("count", 10);
 		return "listallmyProject";
 	
 	}
 	
 	
+	public String listdetailbyid(){
+		
+		   //返回的是一个集合
+System.out.println("action 中 通过id查寻一个项目的方法 " +pro.getPro_id());
+	projectList=pros.listdetailbyid(pro.getPro_id());
+	System.out.println("action 中 通过id查寻一个项目的方法 " +projectList);
+		 
+	return "listdetailbyid";
 
+}
 	
 	
 	

@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
-encoding//WebRoot/back/pages/detailProject.jsp=UTF-8
 encoding//WebRoot/back/pages/listallmyProject.jsp=UTF-8
+encoding//WebRoot/back/pages/listdetailbyid.jsp=UTF-8
+encoding//WebRoot/back/pages/updatesuccess.jsp=UTF-8
