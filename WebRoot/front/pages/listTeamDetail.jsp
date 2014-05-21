@@ -28,6 +28,8 @@
 	media="screen">
 <link rel="stylesheet" href="front/css/layout.css" type="text/css"
 	media="screen">
+<link rel="stylesheet" href="front/css/bootstrap.css">
+	
 <style type="text/css">
 table.tbcss,table.tbcss td {
 	padding: 2px;
@@ -57,6 +59,7 @@ table.tbcss,table.tbcss td {
 <link href="front/css/h-countent.css" rel="stylesheet" type="text/css">
 </head>
 <body id="page2">
+
 	<!-- header -->
 	<div class="bg">
 		<div class="main">
@@ -69,8 +72,8 @@ table.tbcss,table.tbcss td {
 					<form id="search-form" action="" method="post"
 						enctype="multipart/form-data">
 						<fieldset>
-							<div class="search-form">
-								<input type="text" name="search" value="Type Keyword Here"
+							<div class="search-form" style="height: 38px;" >
+								<input type="text" name="search" style="width: 165px;" value="Type Keyword Here"
 									onBlur="if(this.value=='') this.value='Type Keyword Here'"
 									onFocus="if(this.value =='Type Keyword Here' ) this.value=''" />
 								<a href="#"
@@ -83,10 +86,10 @@ table.tbcss,table.tbcss td {
 					<nav>
 						<ul class="menu">
 							<li><a href="front/pages/index.jsp">Home Page</a></li>
-							<li><a class="active" href="front/pages/list.jsp">Order
+							<li><a href="front/pages/list.jsp">Order
 									and Invest</a></li>
 							<li><a href="front/pages/services.jsp">Audit Accounts</a></li>
-							<li><a href="ming/team_listTeam">Join Projects</a></li>
+							<li><a  class="active" href="front/pages/products.jsp">Join Projects</a></li>
 							<li class="last-item"><a href="contacts.html">Submit
 									Project</a></li>
 						</ul>
@@ -126,54 +129,71 @@ table.tbcss,table.tbcss td {
 											<a href="http://www.demohour.com/projects/discover/3_0_0_0">更多筹资</a>
 										</div>
 									</div>
-									<div class="project-list">
-										<s:iterator value="projectList" var="list">
-											<ul class="project-one">
-												<li class="project-pic"><a href="#"
-													title="<s:property value="#list.pro_title"/>"><img
-														src="myimages/<s:property value="#list.pro_picture"/>" width="223"
-														height="165"></a></li>
-												<li class="project-title"><a href="#"> <s:property  value="#list.pro_title" />
-												</a></li>
-												<li class="project-function"><a
-													href="/forums/project-297159" title="此项目有1个话题"
-													class="project-p-on">话题：1</a> <a
-													href="/projects/297159/backers" title="11用户支持此项目"
-													class="project-g-on">支持：11</a> <a
-													href="/projects/discover/10_0_0_0"
-													class="project-g-running">筹资中</a></li>
-												<li class="project-list-stats">
-													<div class="projectpledgedwrap">
-														<div style="width:24%;"
-															class="projectpledged projectpledged-failure"></div>
-													</div>
-													<div class="projectstats">
-														<p class="widtha">
-															<strong>0%</strong>已达到
-														</p>
-														<p class="widthb">
-															<strong><span><b>¥</b>245</span></strong>已获支持
-														</p>
-														<p class="widthd">
-															<strong>11/08/20</strong>结束时间
-														</p>
-													</div>
-												</li>
-											</ul>
-
-										</s:iterator>
+									
+									
 									</div>
 									
+					
+  <div class="form-group">
+    <label for="input1" class="col-sm-2 control-label">项目组名称</label>
+    <div class="col-sm-10">
+      <input type="text" name="team.name" value="${team.name }" readonly="readonly" class="form-control" id="input1"  placeholder="项目组名称">
+    </div>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <label for="input2"  class="col-sm-2 control-label">发起人</label>
+    <div class="col-sm-10">
+      <input type="text"  name="user.nickname"  readonly="readonly"  class="form-control" id="input2" placeholder="发起人">
+    </div>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <label for="input1" class="col-sm-2 control-label"><a href="#">团队项目</a></label>
+    <div class="col-sm-10">
+    <a href="#"><input type="text"  name="project.name"  readonly="readonly"  class="form-control" id="input1"  placeholder="发起项目"></a>
+    </div>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <label for="input2" class="col-sm-2 control-label">共需人数</label>
+    <div class="col-sm-10">
+      <input type="text" name="team.num" value="${team.num }" readonly="readonly" class="form-control"  id="input2" placeholder=" 共需人数">
+    </div>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <label for="input1" class="col-sm-2 control-label">研究方向（专业）</label>
+    <div class="col-sm-10">
+      <input type="text" name="team.major" value="${team.major }" readonly="readonly" class="form-control" id="input1"  placeholder="研究方向（专业）">
+    </div>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <label for="input2" class="col-sm-2 control-label">加入人数</label>
+    <div class="col-sm-10">
+      <input type="text" name="teamUserCount" value="${teamUserCount }" readonly="readonly" class="form-control"  id="input2" placeholder="加入人数">
+    </div>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <label for="input2" class="col-sm-2 control-label">项目组介绍</label><br>
+    <div class="col-sm-10">
+      ${team.decl }
+    </div> 
+  </div>
+  
+<a href="ming/team_listTeamById?team_id=${team.team_id }"> <h1 style="text-align: center;"> 加入我们</h1></a>
+    
+ 
+					
 									
 									
 									
 									
 									
 									
-									
-									
-									
-								</div>
+								
 								
 							</div>
 						</div>
@@ -315,6 +335,8 @@ table.tbcss,table.tbcss td {
 			</footer>
 		</div>
 	</div>
+	<script src="front/js/bootstrap.js"></script>
+<script src="front/js/jquery-1.6.min.js"></script>
 	<script type="text/javascript">
 		Cufon.now();
 	</script>

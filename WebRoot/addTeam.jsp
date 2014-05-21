@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="http://ckfinder.com" prefix="ckfinder"%>
+<%@taglib uri="http://ckeditor.com" prefix="ckeditor"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -30,7 +32,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      人数:<input type="text" name="team.num" /><br>
      专业:<input type="text" name="team.major" /><br>
      权限类型:<input type="text" name="team.power_type" /><br>
-     宣言:<input type="text" name="team.decl" /><br>
+     项目组介绍:
+      <textarea cols="80" id="editor1" name="team.decl" rows="10"></textarea><br>
+			<input type="submit" value="Submit" id="submit" onclick="return check();" />
+		
+		<ckfinder:setupCKEditor basePath="/tinajianwang/ckfinder/"
+			editor="editor1" />
+		<ckeditor:replace replace="editor1"
+			basePath="/tianjianwang/ckeditor/" />
+     
+     
        <input type="submit" value="提交"/>
    </form>
    <a href="ming/team_listTeamById?team_id=1">查询团队信息</a>

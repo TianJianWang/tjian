@@ -28,6 +28,8 @@
 	media="screen">
 <link rel="stylesheet" href="front/css/layout.css" type="text/css"
 	media="screen">
+<link rel="stylesheet" href="front/css/bootstrap.css">
+	
 <style type="text/css">
 table.tbcss,table.tbcss td {
 	padding: 2px;
@@ -57,6 +59,7 @@ table.tbcss,table.tbcss td {
 <link href="front/css/h-countent.css" rel="stylesheet" type="text/css">
 </head>
 <body id="page2">
+
 	<!-- header -->
 	<div class="bg">
 		<div class="main">
@@ -69,8 +72,8 @@ table.tbcss,table.tbcss td {
 					<form id="search-form" action="" method="post"
 						enctype="multipart/form-data">
 						<fieldset>
-							<div class="search-form">
-								<input type="text" name="search" value="Type Keyword Here"
+							<div class="search-form" style="height: 38px;" >
+								<input type="text" name="search" style="width: 165px;" value="Type Keyword Here"
 									onBlur="if(this.value=='') this.value='Type Keyword Here'"
 									onFocus="if(this.value =='Type Keyword Here' ) this.value=''" />
 								<a href="#"
@@ -83,10 +86,10 @@ table.tbcss,table.tbcss td {
 					<nav>
 						<ul class="menu">
 							<li><a href="front/pages/index.jsp">Home Page</a></li>
-							<li><a class="active" href="front/pages/list.jsp">Order
+							<li><a href="front/pages/list.jsp">Order
 									and Invest</a></li>
 							<li><a href="front/pages/services.jsp">Audit Accounts</a></li>
-							<li><a href="ming/team_listTeam">Join Projects</a></li>
+							<li><a  class="active" href="front/pages/products.jsp">Join Projects</a></li>
 							<li class="last-item"><a href="contacts.html">Submit
 									Project</a></li>
 						</ul>
@@ -126,54 +129,87 @@ table.tbcss,table.tbcss td {
 											<a href="http://www.demohour.com/projects/discover/3_0_0_0">更多筹资</a>
 										</div>
 									</div>
-									<div class="project-list">
-										<s:iterator value="projectList" var="list">
-											<ul class="project-one">
-												<li class="project-pic"><a href="#"
-													title="<s:property value="#list.pro_title"/>"><img
-														src="myimages/<s:property value="#list.pro_picture"/>" width="223"
-														height="165"></a></li>
-												<li class="project-title"><a href="#"> <s:property  value="#list.pro_title" />
-												</a></li>
-												<li class="project-function"><a
-													href="/forums/project-297159" title="此项目有1个话题"
-													class="project-p-on">话题：1</a> <a
-													href="/projects/297159/backers" title="11用户支持此项目"
-													class="project-g-on">支持：11</a> <a
-													href="/projects/discover/10_0_0_0"
-													class="project-g-running">筹资中</a></li>
-												<li class="project-list-stats">
-													<div class="projectpledgedwrap">
-														<div style="width:24%;"
-															class="projectpledged projectpledged-failure"></div>
-													</div>
-													<div class="projectstats">
-														<p class="widtha">
-															<strong>0%</strong>已达到
-														</p>
-														<p class="widthb">
-															<strong><span><b>¥</b>245</span></strong>已获支持
-														</p>
-														<p class="widthd">
-															<strong>11/08/20</strong>结束时间
-														</p>
-													</div>
-												</li>
-											</ul>
-
-										</s:iterator>
+									
+									
 									</div>
 									
+		<table class="table table-hover">
+			 <tr>
+			<th scope="col">
+
+项目名</th>
+    <th scope="col">所需人数</th>
+	 <th scope="col">已加入人数</th>
+    <th scope="col">专业</th>
+    
+    <th>操作</th>
+    <th></th>
+    </tr>
+			<s:iterator 
+
+value="teamList" var="list">
+			 <tr>
+   <td> <s:property value="#list.name"/>
+
+ </td>
+	<td><s:property 
+
+value="#list.num"/> </td>
+    <td><s:property 
+
+value="teamUserCount"/></td>
+    <td><s:property 
+
+value="#list.major"/></td>
+    
+
+
+
+    <td><a href="ming/team_listTeamDetail?team_id=<s:property value="#list.team_id"/>">详细信息</a></td>
+  <td><a href="ming/team_listTeamById?team_id=<s:property value="#list.team_id"/>">申请加入</a></td>
+  </tr>
+			
+			</s:iterator>
+			
+  
+  <tr>
+    <td>中华总会</td>
+	<td>50</td>
+    <td>20</td>
+    <td>java开发</td>
+   
+     <td><a href="#">详细信息</a></td>
+  </tr>
+  <tr>
+  <td>web开发</td>
+    <td>30</td>
+    <td>10</td>
+    <td>j2ee</td>
+     <td><a href="#">详细信息</a></td>
+  </tr>
+  <tr>
+  <td>三人行</td>
+    <td>12</td>
+    <td>2</td>
+    <td>美工</td>
+     <td><a href="#">详细信息</a></td>
+  </tr>
+  <tr>
+  <td>清新独处</td>
+    <td>5</td>
+    <td>1</td>
+    <td>美工</td>
+     <td><a href="#">详细信息</a></td>
+  </tr>
+            
+          </table>											
 									
 									
 									
 									
 									
 									
-									
-									
-									
-								</div>
+								
 								
 							</div>
 						</div>
@@ -315,6 +351,8 @@ table.tbcss,table.tbcss td {
 			</footer>
 		</div>
 	</div>
+	<script src="front/js/bootstrap.js"></script>
+<script src="front/js/jquery-1.6.min.js"></script>
 	<script type="text/javascript">
 		Cufon.now();
 	</script>
