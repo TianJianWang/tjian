@@ -19,7 +19,7 @@ import antlr.collections.List;
 import com.tianjian.model.Project;
 import com.tianjian.util.HibernateSessionFactory;
 public class ProjectDao {
-	/*
+	/*      方法一
 	 * 添加个人项目的方法，提交表单之后返回的是“addsuccess”或则“adderror”
 	 * */
 	public String addProject(Project pro) {
@@ -49,7 +49,7 @@ public class ProjectDao {
 	
 	
 	/*
-	 * 
+	 * 方法二
 	 * 通过项目id删除项目
 	 * 
 	 * */
@@ -96,7 +96,7 @@ public class ProjectDao {
 		    
 		    
 
-			/*
+			/*方法三
 			 * 
 			 * 查询项目截止时间（pro_enddate）小于当前时间（now），并且项目所支持资金（support_money）达不到预期的资金项目(pro_wantedmoney)（即查询破产项目）
 			 * 
@@ -137,14 +137,7 @@ public class ProjectDao {
 							e.printStackTrace();
 						}			    			      		    
 					    
-					    /*
-					     * 
-					     * String sql="select * from user_table where username=? and password=?"
-					     *  SQLQuery query=getSession().createSQLQuery(sql).addEntity(UserTable.class);
-		                    query.setString(0,username);
-		       query.setString(1,password);
-					     * */
-					   // session.update(pro);
+					   
 					    System.out.println(projectList);
 						return projectList;
 				 } 
@@ -163,6 +156,9 @@ public class ProjectDao {
 		    
 		    
 	/*
+	 * 
+	 * 
+	 * 方法四
 	 * 修改项目
 	 * 
 	 * 
@@ -209,7 +205,7 @@ public class ProjectDao {
 	/*
 	 * 
 	 * 
-	 * 
+	 * 方法五
 	 * 查询所有的项目
 	 * 
 	 * 
@@ -235,6 +231,9 @@ public class ProjectDao {
 					
 				}
 			   // session.update(pro);
+			    
+			    
+			    System.out.println("总有的查询项目有"+projectList.size());
 				return projectList;
 		 } 
 
@@ -244,7 +243,7 @@ public class ProjectDao {
 	
 	
 	/*
-	 * 
+	 * 方法六
 	 * 此处需要得到用户的id作为参数传入，现在测试id记为 1
 	 * */
 	public ArrayList listallmyProject(){
@@ -272,14 +271,8 @@ public class ProjectDao {
 					e.printStackTrace();
 				}			    			      		    
 			    
-			    /*
-			     * 
-			     * String sql="select * from user_table where username=? and password=?"
-			     *  SQLQuery query=getSession().createSQLQuery(sql).addEntity(UserTable.class);
-                    query.setString(0,username);
-       query.setString(1,password);
-			     * */
-			   // session.update(pro);
+			    
+			 
 			    System.out.println(projectList);
 				return projectList;
 		 } 
@@ -287,6 +280,9 @@ public class ProjectDao {
 	
 	
 	/*
+	 * 
+	 * 方法七
+	 * 
 	 * 通过项目id列出一个项目的详细信息
 	 * 
 	 * */
@@ -328,11 +324,11 @@ public class ProjectDao {
 	 * 通过分页查询呢
 	 * 
 	 * 
-	 * 
+	 * 方法 八
 	 * 
 	 * 
 	 * */
-	public ArrayList listprojectbypages(int page,int count){
+	public ArrayList listprojectbypage(int page,int count){
 		ArrayList<Project> projectList=new ArrayList<Project>();
 	
 		
@@ -342,22 +338,18 @@ public class ProjectDao {
 			
 			    try {
 					Transaction ts=session.beginTransaction();
-					 Criteria criteria=session.createCriteria(Project.class); 
+					 
+					Query query=session.createQuery("from Project where pro_id=?");
+					
+					Criteria criteria=session.createCriteria(Project.class); 
 					 criteria.setFirstResult((page-1)*count);
 					 criteria.setMaxResults(count);
 				 
 					projectList=(ArrayList)criteria.list();
-					
-					System.out.println("254244534654534        *****"+           projectList.size());
-					for(Project p:projectList){
-						System.out.println("项目ID"+p.getPro_id());
-						System.out.println("项目标题"+p.getPro_title());
-						System.out.println("项目类型"+p.getPro_type());
-					 
-					}
-					
+				
 					   ts.commit();  
-					   System.out.println("dao中的通过项目id查询项目的方法session："+session);
+					   System.out.println("dao中的通过分页查询项目的方法："+projectList);
+					   System.out.println("*****"+projectList.size());
 					   HibernateSessionFactory.closeSession();
 				} catch (HibernateException e) {
 				
@@ -366,7 +358,7 @@ public class ProjectDao {
 			    
 		
 			   // session.update(pro);
-			    System.out.println(projectList);
+			  //  System.out.println(projectList);
 				return projectList;
 		 } 
 	
@@ -375,9 +367,16 @@ public class ProjectDao {
 	
 
  
-	// 计算总页数（分页）
-		public int listPage() {
-		 int allpage=0;
+/*
+ * 
+ *  计算总页数（分页）
+ * 
+ * 
+ * 
+ * */
+	   
+		public int getallPage(){
+		int  allpage=0;
 		 ArrayList<Project> projectList;
 		 HibernateSessionFactory hibernateSessionFactory=new HibernateSessionFactory();
 		 Session session=HibernateSessionFactory.getsSession();
@@ -385,26 +384,14 @@ public class ProjectDao {
 		
 		    try {
 				Transaction ts=session.beginTransaction();
-				 Criteria criteria=session.createCriteria(Project.class); 
-				 //criteria.setFirstResult((page-1)*count);
-				 //criteria.setMaxResults(count);
-			 
-				projectList=(ArrayList<Project>)criteria.list();
-				Date date1 = new Date();
-		        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		        String date2=dateFormat.format(date1);
-		  
-				System.out.println("254244534654534        *****"+           projectList.size());
-				for(Project p:projectList){
-					  String date=p.getPro_endDate();
-					System.out.println();
-					 
-				 
-				}
 				
+				// Query query=session.createQuery("select count(*) from Project");
+				Query query=session.createQuery("from Project");
+				allpage=(Integer) query.list().size();
+
+				System.out.println("打印查询的总页数"+allpage);				
 				   ts.commit();  
-				   System.out.println("dao中的通过项目id查询项目的方法session："+session);
-				   HibernateSessionFactory.closeSession();
+				  HibernateSessionFactory.closeSession();
 			} catch (HibernateException e) {
 			
 				e.printStackTrace();
@@ -413,8 +400,49 @@ public class ProjectDao {
 		}
 	
 	
-	
+	/*
+	 * 通过项目类型查询项目
+	 * 
+	 * 
+	 * 
+	 * 
+	 * */
  
+		
+		
+		public ArrayList listprojectbypro_type(String pro_type){
+			ArrayList projectList=null;
+			
+			  HibernateSessionFactory hibernateSessionFactory=new HibernateSessionFactory();
+				 Session session=HibernateSessionFactory.getsSession();
+				 //   System.out.println(session);
+				
+				    try {
+						Transaction ts=session.beginTransaction();
+						
+						
+						Query query=session.createQuery("from Project where pro_type=?");
+						
+				            query.setString(0, pro_type);
+						
+						projectList=(ArrayList) query.list();
+						
+						   ts.commit();  
+						   System.out.println("dao中的通过项目类型查询项目的方法"+projectList+"总有多少个项目"+projectList.size());
+						   
+						   HibernateSessionFactory.closeSession();
+					} catch (HibernateException e) {
+					
+						e.printStackTrace();
+					}			    			      		    
+				    
+				   
+					return projectList;
+			 }
+
+
+
+
 	
 	
 	
