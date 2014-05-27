@@ -16,13 +16,13 @@
 <result name="adderror">/back/pages/addProject.jsp</result>
 <result name="addsuccess" type="redirect">/back/pages/addsuccess.jsp</result>
 <result name="querysuccess">/front/pages/list.jsp</result>
-
-
-<!--此处项目路径找不到 -->
 <result name="listallmyProject">/back/pages/listallmyProject.jsp</result>
+ <result name="listprojectbypagesuccess">/back/pages/listallmyProject.jsp</result> 
+<!--此处项目路径找不到 -->
 <result name="updatesuccess" >/back/pages/updatesuccess.jsp</result>
 <result name="deleteprojectsuccess" >/back/pages/deleteprojectsuccess.jsp</result>
 <result name="listdetailbyid" >/back/pages/listdetailbyid.jsp</result>
+
 </action>
 
 </package>

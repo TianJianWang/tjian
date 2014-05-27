@@ -2,17 +2,16 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-
-
-
-
-
-	
 	<!-- name指定POJO类，table指定对应数据库的表 -->
 	<class name="com.tianjian.model.Project" table="project">
-		<id name="pro_id" type="java.lang.Integer" ><!-- name指定主键，type指定主键类型 -->
-			<!-- <generator class="foreign"> 采用foreign标志生成器，直接采用外键的属性值 <param name="property">detail</param> 
-				</generator> -->
+	
+	<!-- name指定主键，type指定主键类型 -->
+		<id name="pro_id" type="java.lang.Integer" >
+		<generator class="native"></generator><!-- 指定id的生成策略如自增、自添加等-->
+		
+		
+	<!-- <generator class="foreign"> 采用foreign标志生成器，直接采用外键的属性值 
+	<param name="property">detail</param> 	</generator> -->
 		</id>
 		<property name="pro_title" type="java.lang.String" />
 		<property name="pro_wantedMoney"  type="java.lang.Integer"  />

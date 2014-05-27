@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     恭喜你！添加成功。
     <a href="back/pages/addProject.jsp"> 点此继续添加</a><br>
-    <a href="xpj/project_listallmyProject "> 查询个人所有的项目</a></br>
+    <a href="xpj/project_listallmyProject"> 查询个人所有的项目</a><br>
     <a href="xpj/project_queryProject"> 查询全部项目</a><br>
   </body>
 </html>

@@ -10,7 +10,7 @@ public class TestZongye {
 		
 		
 		ProjectDao prod=new ProjectDao();
-		int a=prod.getallPage();
+		int a=(int) prod.getallCount();
 		System.out.println("victory****************************");
 	}
 

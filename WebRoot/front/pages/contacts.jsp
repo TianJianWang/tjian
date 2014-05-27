@@ -523,179 +523,24 @@ document.write(c);
 	<div class="bg">
 		<div class="main">
 			<header>
-				<div class="row-1">
-					<h1>
-						<a class="logo" href="front/pages/index.jsp">Point.co</a>
-						<strong class="slog">The most creative ideas</strong>
-					</h1>
-					<form id="search-form" method="post" enctype="multipart/form-data">
-						<fieldset>
-							<div class="search-form">					
-								<input type="text" name="search" value="Type Keyword Here" onBlur="if(this.value=='') this.value='Type Keyword Here'" onFocus="if(this.value =='Type Keyword Here' ) this.value=''" />
-								<a href="#" onClick="document.getElementById('search-form').submit()">Search</a>									
-							</div>
-						</fieldset>
-					</form>
-				</div>
+			  <%@ include file="top.jsp" %>
 				<div class="row-2">
 					<nav>
 						<ul class="menu">
 						  <li><a href="front/pages/index.jsp">Home Page</a></li>
 						  <li><a href="front/pages/list.jsp">Order and Invest</a></li>
 						  <li><a href="front/pages/services.jsp">Audit Accounts</a></li>
-						  <li><a href="ming/team_listTeam">Join Projects</a></li>
+						  <li><a href="front/pages/products.jsp">Join Projects</a></li>
 						  <li class="last-item"><a  class="active" href="front/pages/contacts.jsp">Submit Project</a></li>
 						</ul>
 					</nav>
 				</div>
 			</header>
-<!-- content --><div class="ic">More Website Templates @ <a href="http://www.cssmoban.com/" >网页模板</a>!</div>
-			<section id="content">
-				<div class="padding">
-					<div class="wrapper margin-bot">
-						<div class="col-3">
-							<div class="indent">
-								<h2 class="p0">Submit Project Form</h2>
-								<form id="contact-form" action="list.php" method="post" enctype="multipart/form-data">					
-									<fieldset>
-										<label><span class="text-form">主题:</span><input name="title" type="text" /></label>
-										<label><span class="text-form">Email:</span><input name="email" type="text" /></label> <label><span class="text-form">全面启动:</span><input id="date" name="date"  type="text"  onfocus="c.showMoreDay = false;c.show(this);"/>				
-                                        <span class="text-form">日之前&nbsp;</span><span class="text-form"> 需要资金¥:</span><input id="money" name="money"  type="text" /></label>     
-										<div class="wrapper"><div class="text-form">创意:</div><textarea name="content"></textarea></div>
-										<div class="buttons">
-											<a class="button-2" href="#" onClick="document.getElementById('contact-form').reset()">Clear</a>
-											<a class="button-2" href="#" onClick="document.getElementById('contact-form').submit()">Make Public</a>
-										</div>									 
-								  </fieldset>						
-							  </form>
-							  <script language="JavaScript"> 
-var today=new Date(); 
-document.getElementById('contact-form').date.value=today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDay(); 
-</script> 
-						  </div>
-							
-						</div>
-						<div class="col-4">
-							<div class="block-news">
-								<h3 class="color-4 indent-bot2">Contacts</h3>
-								<dl class="contact p3">
-									<dt><span>Our Address:</span>USA, San Diego</dt>
-									<dd><span>Telephone:</span>+354 563-56-00</dd>
-									<dd><span>E-mail:</span><a href="#">Miguelyu@gmail.com</a></dd>
-								</dl>
-								<h3 class="color-4 indent-bot2">Miscellaneous</h3>
-								<p class="text-1">Lorem ipsum dolor sit amet, consectetur adipi<br>scing elit. Mauris quis consectetur nulla. Suspendisse tellus enim, molestie congue male<br>suada sed.</p>
-							</div>
-						</div>
-					</div>
-					<div class="box-bg">
-						<div class="wrapper">
-							<div class="col-1">
-								<div class="box first">
-									<div class="pad">
-										<div class="wrapper indent-bot">
-											<strong class="numb img-indent2">01</strong>
-											<div class="extra-wrap">
-												<h3 class="color-1"><strong>Careful</strong>Analysis</h3>
-											</div>
-										</div>
-										<div class="wrapper">
-											<a class="button img-indent-r" href="#">>></a>
-											<div class="extra-wrap">
-												The most of the most professional <br/>最多的最专业人士评价.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-1">
-								<div class="box second">
-									<div class="pad">
-										<div class="wrapper indent-bot">
-											<strong class="numb img-indent2">02</strong>
-											<div class="extra-wrap">
-												<h3 class="color-2"><strong>Quick</strong>Research</h3>
-											</div>
-										</div>
-										<div class="wrapper">
-											<a class="button img-indent-r" href="#"></a>
-											<div class="extra-wrap">
-												The quickest for the most outstanding creative <br/>最快的最优秀创意孵化.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-2">
-								<div class="box third">
-									<div class="pad">
-										<div class="wrapper indent-bot">
-											<strong class="numb img-indent2">03</strong>
-											<div class="extra-wrap">
-												<h3 class="color-3"><strong>New</strong>Strategies</h3>
-											</div>
-										</div>
-										<div class="wrapper">
-											<a class="button img-indent-r" href="#">>></a>
-											<div class="extra-wrap">
-												The most transparent and the most trusted finances <br/>最透明最可信的财务管理.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+<!-- content -->
+<%@ include file="contactscon.jsp" %>
 <!-- footer -->
-			<footer>
-				<div class="row-top">
-					<div class="row-padding">
-						<div class="wrapper">
-							<div class="col-1">
-								<h4>Address:</h4>
-								<dl class="address">
-									<dt><span>Country:</span>USA</dt>
-									<dd><span>City:</span>San Diego</dd>
-									<dd><span>Address:</span>Beach st. 54</dd>
-									<dd><span>Email:</span><a href="#">Miguelyu@gmail</a></dd>
-								</dl>
-							</div>
-							<div class="col-2">
-								<h4>Follow Us:</h4>
-								<ul class="list-services">
-									<li class="item-1"><a href="#">Facebook</a></li>
-									<li class="item-2"><a href="#">Twitter</a></li>
-									<li class="item-3"><a href="#">LinkedIn</a></li>
-								</ul>
-							</div>
-							<div class="col-3">
-								<h4>College Division:</h4>
-								<ul class="list-1">
-									<li><a href="#">广州 SCUT SYSU</a></li>
-									<li><a href="#">上海 Fudan Tongji</a></li>
-									<li><a href="#">北京 Tsinghua PKU</a></li> 
-									<li><a href="#">河南 ZZU Henan</a></li>
-								</ul>
-							</div>
-							<div class="col-4">
-								<div class="indent3">
-									<strong class="footer-logo">天鉴<strong>Tjian.org</strong></strong>
-									<strong class="phone"><strong>Toll Free:</strong> 1-800-567-8934</strong>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row-bot">
-					<div class="aligncenter">
-						<p class="p0">Copyright © 2014 天鉴网 Tjian.org</p>
-						 Reserved by <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">天使投资品鉴联合会</a> <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000354874'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000354874%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><br>
-						<!-- {%FOOTER_LINK} -->
-					</div>
-				</div>
-			</footer>
+			<%@ include file="footer.jsp" %>
+	
 		</div>
 	</div>
 	<script type="text/javascript"> Cufon.now(); </script>

@@ -75,12 +75,6 @@ public class ProjectDao {
 				   
 				   System.out.println("dao中的删除项目的方法session："+session);
 				   
-				   
-				   
-		
-				   
-				   
-				   
 				   HibernateSessionFactory.closeSession();
 				   flag="deleteprojectsuccess";
 						   
@@ -141,20 +135,6 @@ public class ProjectDao {
 					    System.out.println(projectList);
 						return projectList;
 				 } 
-			
-			
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
 	/*
 	 * 
 	 * 
@@ -194,14 +174,6 @@ public class ProjectDao {
 		return flag;
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	/*
 	 * 
 	 * 
@@ -213,11 +185,8 @@ public class ProjectDao {
 	 * */
 	public ArrayList queryProject(){
 		ArrayList projectList=null;
-		
 		  HibernateSessionFactory hibernateSessionFactory=new HibernateSessionFactory();
 			 Session session=HibernateSessionFactory.getsSession();
-			 //   System.out.println(session);
-			
 			    try {
 					Transaction ts=session.beginTransaction();
 					Query query=session.createQuery("from Project");
@@ -226,21 +195,11 @@ public class ProjectDao {
 					   System.out.println("dao中的查询项目的方法session："+session);
 					   HibernateSessionFactory.closeSession();
 				} catch (HibernateException e) {
-				
 					e.printStackTrace();
-					
 				}
-			   // session.update(pro);
-			    
-			    
 			    System.out.println("总有的查询项目有"+projectList.size());
 				return projectList;
 		 } 
-
-	
-	
-	
-	
 	
 	/*
 	 * 方法六
@@ -248,9 +207,8 @@ public class ProjectDao {
 	 * */
 	public ArrayList listallmyProject(){
 		ArrayList projectList=null;
-		
 		  HibernateSessionFactory hibernateSessionFactory=new HibernateSessionFactory();
-			 Session session=HibernateSessionFactory.getsSession();
+			 Session session=hibernateSessionFactory.getsSession();
 			 //   System.out.println(session);
 			
 			    try {
@@ -265,7 +223,7 @@ public class ProjectDao {
 					
 					   ts.commit();  
 					   System.out.println("dao中的查询项目的方法session："+session);
-					   HibernateSessionFactory.closeSession();
+					   hibernateSessionFactory.closeSession();
 				} catch (HibernateException e) {
 				
 					e.printStackTrace();
@@ -339,7 +297,7 @@ public class ProjectDao {
 			    try {
 					Transaction ts=session.beginTransaction();
 					 
-					Query query=session.createQuery("from Project where pro_id=?");
+					//Query query=session.createQuery("from Project where pro_id=?");
 					
 					Criteria criteria=session.createCriteria(Project.class); 
 					 criteria.setFirstResult((page-1)*count);
@@ -375,8 +333,8 @@ public class ProjectDao {
  * 
  * */
 	   
-		public int getallPage(){
-		int  allpage=0;
+		public long getallCount(){
+		long  allcount=0;
 		 ArrayList<Project> projectList;
 		 HibernateSessionFactory hibernateSessionFactory=new HibernateSessionFactory();
 		 Session session=HibernateSessionFactory.getsSession();
@@ -385,18 +343,20 @@ public class ProjectDao {
 		    try {
 				Transaction ts=session.beginTransaction();
 				
-				// Query query=session.createQuery("select count(*) from Project");
-				Query query=session.createQuery("from Project");
-				allpage=(Integer) query.list().size();
+				 Query query=session.createQuery("select count(*) from Project");
+				//Query query=session.createQuery("from Project");
+				 allcount= (Long) query.uniqueResult();
 
-				System.out.println("打印查询的总页数"+allpage);				
+					
+				
+				System.out.println("打印查询的总页数"+allcount);				
 				   ts.commit();  
 				  HibernateSessionFactory.closeSession();
 			} catch (HibernateException e) {
 			
 				e.printStackTrace();
 			}			    			      			      		    
-			return allpage;
+			return allcount;
 		}
 	
 	
@@ -440,7 +400,7 @@ public class ProjectDao {
 					return projectList;
 			 }
 
-
+  
 
 
 	

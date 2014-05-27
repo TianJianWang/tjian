@@ -1,4 +1,4 @@
-package com.tianjian.action;
+﻿package com.tianjian.action;
 import java.io.File;
 import java.util.ArrayList;
 import org.apache.struts2.ServletActionContext;
@@ -16,7 +16,11 @@ public class ProjectAction {
 	String pictureFileName;
 	String pictureContentType;
 	int page;
-	int count;
+	int count=10;
+	int prepage;
+	int nextpage;
+	int lastpage;
+	int allpage;
 	String pro_type;
 public int getpage() {
 		return page;
@@ -75,6 +79,43 @@ public int getPro_id() {
 	public ProjectAction(){
 		  pros=new ProjectService();
 	}
+	
+public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
+	public int getPrepage() {
+		return prepage;
+	}
+	public void setPrepage(int prepage) {
+		this.prepage = prepage;
+	}
+	public int getNextpage() {
+		return nextpage;
+	}
+	public void setNextpage(int nextpage) {
+		this.nextpage = nextpage;
+	}
+	public int getLastpage() {
+		return lastpage;
+	}
+	public void setLastpage(int lastpage) {
+		this.lastpage = lastpage;
+	}
+	public int getAllpage() {
+		return allpage;
+	}
+	public void setAllpage(int allpage) {
+		this.allpage = allpage;
+	}
+	public String getPro_type() {
+		return pro_type;
+	}
+	public void setPro_type(String pro_type) {
+		this.pro_type = pro_type;
+	}
 public String addProject(){
 		Picture pic=new Picture();
 		String fileName=pic.addPicture(picture, pictureFileName, pictureContentType);
@@ -104,7 +145,7 @@ public String queryProject(){
 public String listallmyProject(){
 		projectList=pros.listallmyProject();
 		System.out.println("action 中 查寻个人所有项目的方法 " +projectList);
-	    ServletActionContext.getRequest().setAttribute("count", 10);
+	   // ServletActionContext.getRequest().setAttribute("count", 10);
 		return "listallmyProject";
 	}
 public String listdetailbyid(){
@@ -113,9 +154,26 @@ public String listdetailbyid(){
 	    return "listdetailbyid";
 }
 public String listprojectbypage(){
-	projectList=pros.listprojectbypage(page, count);
+	projectList=pros.listprojectbypage(page, count);//getallCount为long型的数
+	int allcount=Integer.parseInt(pros.getallCount()+"");
+	
+	allpage=(int) (allcount%count==0?allcount/count:(allcount/count+1));
+	lastpage=allpage;
+	System.out.println("&&&&&&&&&&&&&&&&&&"+allpage);
+	if(page==1){
+		prepage=page;}
+	else{
+		prepage=page-1;
+	}
+	
+	if(page==allpage){
+		nextpage=allpage;
+		
+	}else{
+		nextpage=page+1;
+	}
 	System.out.println("action中的通过页码和每页查询的数目来查询项目的方法,总有项目"+projectList.size());
-    return null;
+    return "listprojectbypagesuccess";
 }
 public ArrayList listprojectbypro_type(){
 	projectList=pros.listprojectbypro_type(pro_type);
