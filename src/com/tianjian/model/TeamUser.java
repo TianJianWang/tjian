@@ -2,18 +2,18 @@ package com.tianjian.model;
 
 public class TeamUser {
 	private int id;
-	private int user_id;
-	private int team_id;
+	private User user;
+	private Team team;
 	private String power;
     private String time;
 	public TeamUser() {
 		super();
 	}
-	public TeamUser(int id, int user_id, int team_id, String power, String time) {
+	public TeamUser(int id, User user, Team team, String power, String time) {
 		super();
 		this.id = id;
-		this.user_id = user_id;
-		this.team_id = team_id;
+		this.user = user;
+		this.team = team;
 		this.power = power;
 		this.time = time;
 	}
@@ -23,17 +23,17 @@ public class TeamUser {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getUser_id() {
-		return user_id;
+	public User getUser() {
+		return user;
 	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUser(User user) {
+		this.user = user;
 	}
-	public int getTeam_id() {
-		return team_id;
+	public Team getTeam() {
+		return team;
 	}
-	public void setTeam_id(int team_id) {
-		this.team_id = team_id;
+	public void setTeam(Team team) {
+		this.team = team;
 	}
 	public String getPower() {
 		return power;
@@ -49,8 +49,8 @@ public class TeamUser {
 	}
 	@Override
 	public String toString() {
-		return "TeamUser [id=" + id + ", user_id=" + user_id + ", team_id="
-				+ team_id + ", power=" + power + ", time=" + time + "]";
+		return "TeamUser [id=" + id + ", user=" + user + ", team=" + team
+				+ ", power=" + power + ", time=" + time + "]";
 	}
-    
+
 }

@@ -25,9 +25,15 @@ public class TeamDao {
 		System.out.println("team_id:"+team_id);
 	    Session session=HibernateSessionFactory.getsSession();
 	    Transaction ts= session.beginTransaction();
-	    team=(Team) session.get(Team.class,team_id);
-//	    team= (Team) session.createQuery("from team where  team_id=?").setParameter(0,team_id).uniqueResult();
-	    System.out.println("集合中"+team);
+//	    team=(Team) session.get(Team.class,team_id);
+	    System.out.println("team_id="+team_id);
+	    team= (Team) session.createQuery("from Team where  team_id=?").setParameter(0,team_id).uniqueResult();
+	   
+	    	
+	        System.out.println("集合中"+team.getProject().getPro_title());
+
+	
+	    System.out.println("集合中"+team.getUser().getEmail());
 	   try {
 		ts.commit();
 	} catch ( Exception e){
@@ -73,6 +79,7 @@ public class TeamDao {
 	    Session session=HibernateSessionFactory.getsSession();
 	    try {
 	    Transaction ts= session.beginTransaction();
+	    System.out.println(teamUser);
 	     session.save(teamUser);
 	    flat=true;
 		ts.commit();
@@ -113,7 +120,9 @@ public class TeamDao {
 		Session session=HibernateSessionFactory.getsSession();
 		Transaction ts= session.beginTransaction();
 		teamList=(ArrayList<Team>) session.createQuery("from Team").list();
-		System.out.println("集合中"+teamUser);
+		for(Team team:teamList){
+		team.getProject().getPro_title();
+		}
 		try {
 			ts.commit();
 		} catch ( Exception e) {
@@ -140,6 +149,24 @@ public class TeamDao {
 			}
 		return flat;
 	}
+	public boolean deleteTeamApplyById(int id){
+		boolean flat=false;
+		Session session=HibernateSessionFactory.getsSession();
+		System.out.println(session);
+		Transaction ts= session.beginTransaction();
+		try{
+			session.createQuery("delete TeamApply as ap where ap.id=?").setParameter(0, id).executeUpdate();
+			ts.commit();
+			flat=true;
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		if(session!=null){
+			session.close();
+		}
+		return flat;
+	}
 	public long listTeamUserCout(int team_id){
 		System.out.println("team_id:"+team_id);
 	    Session session=HibernateSessionFactory.getsSession();
@@ -157,7 +184,11 @@ public class TeamDao {
 	public ArrayList<TeamApply> listTeamApplyByTeam(int team_id){
 		  Session session=HibernateSessionFactory.getsSession();
 		    Transaction ts= session.beginTransaction();
-		    applyList=(ArrayList<TeamApply>) session.createQuery("from TeamApply where  team_id=?").setParameter(0, team_id).list();
+		    applyList=(ArrayList<TeamApply>) session.createQuery("from TeamApply t where  t.team.team_id=?").setParameter(0, team_id).list();
+		    for(TeamApply apply:applyList){
+		    	apply.getTeam().getMajor();
+		    	apply.getUser().getNickname();
+		    }
 		   try {
 			ts.commit();
 		} catch ( Exception e){

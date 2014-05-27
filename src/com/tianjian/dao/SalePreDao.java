@@ -12,16 +12,16 @@ import com.tianjian.util.HibernateSessionFactory;
 public class SalePreDao {
 	private SalePre salepre;
 	private List salepreList;
-	//�г�������Ŀ������Ԥ����Ϣ
-	public List listSalepre(){
+	//锟叫筹拷锟斤拷锟斤拷锟斤拷目锟斤拷锟斤拷锟斤拷预锟斤拷锟斤拷息
+	public List listSalepre( int pro_id){
 		 SalePre salepre=new SalePre();
 
 		    Session session=HibernateSessionFactory.getsSession();
 		    System.out.println(session);
 		 
 		    Transaction ts= session.beginTransaction();
-		    salepreList=  session.createQuery("from SalePre where  pro_id=?").setParameter(0, 2).list();
-		    System.out.println("������"+salepreList);
+		    salepreList=  session.createQuery("from SalePre where  pro_id=?").setParameter(0, pro_id).list();
+		    System.out.println("锟斤拷锟斤拷锟斤拷"+salepreList);
 
 		   try {
 			ts.commit();
@@ -32,13 +32,13 @@ public class SalePreDao {
 		return salepreList;
 	}
 	
-//���pre_id��ѯ����Ԥ����Ϣ 
+//锟斤拷锟絧re_id锟斤拷询锟斤拷锟斤拷预锟斤拷锟斤拷息 
 	public SalePre listSalepreById(int pre_id){
 		Session session=HibernateSessionFactory.getsSession();
 		System.out.println(session);
 		Transaction ts= session.beginTransaction();
 		salepre=  (SalePre) session.createQuery("from SalePre where  pre_id=?").setParameter(0, pre_id).uniqueResult();
-		System.out.println("������"+salepreList);
+		System.out.println("锟斤拷锟斤拷锟斤拷"+salepreList);
 		try {
 			ts.commit();
 		}catch ( Exception e) {
@@ -48,7 +48,7 @@ public class SalePreDao {
 		return salepre;
 	}
 	
-	//���Ԥ����Ϣ
+	//锟斤拷锟皆わ拷锟斤拷锟较�
 	public String addSalepre(SalePre salepre){
 		String flat="fail";
 		  Session session=HibernateSessionFactory.getsSession();
@@ -83,7 +83,7 @@ public class SalePreDao {
 			session.close();}
 		return flat;
 	}
-	//�����޸�Ԥ����Ϣ
+	//锟斤拷锟斤拷锟睫革拷预锟斤拷锟斤拷息
 	public String updateSalepre(SalePre salepre){
 		String flat="fail";
 		  Session session=HibernateSessionFactory.getsSession();

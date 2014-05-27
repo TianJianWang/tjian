@@ -83,10 +83,10 @@ table.tbcss,table.tbcss td {
 					<nav>
 						<ul class="menu">
 							<li><a href="front/pages/index.jsp">Home Page</a></li>
-							<li><a class="active" href="front/pages/list.jsp">Order
+							<li><a class="active" href="xpj/project_queryProject">Order
 									and Invest</a></li>
 							<li><a href="front/pages/services.jsp">Audit Accounts</a></li>
-							<li><a href="front/pages/products.jsp">Join Projects</a></li>
+							<li><a href="ming/team_listTeam">Join Projects</a></li>
 							<li class="last-item"><a href="contacts.html">Submit
 									Project</a></li>
 						</ul>
@@ -129,11 +129,12 @@ table.tbcss,table.tbcss td {
 									<div class="project-list">
 										<s:iterator value="projectList" var="list">
 											<ul class="project-one">
-												<li class="project-pic"><a href="#"
+												<li class="project-pic"><a href="ming/pre_listProjectSalepreDetial?project.pro_id=<s:property value="#list.pro_id"/>"
 													title="<s:property value="#list.pro_title"/>"><img
 														src="myimages/<s:property value="#list.pro_picture"/>" width="223"
 														height="165"></a></li>
-												<li class="project-title"><a href="#"> <s:property  value="#list.pro_title" />
+												<li class="project-title"><a href="ming/pre_listProjectSalepreDetial?project.pro_id=<s:property value="#list.pro_id"/>"> 
+												<s:property  value="#list.pro_title" />
 												</a></li>
 												<li class="project-function"><a
 													href="/forums/project-297159" title="此项目有1个话题"

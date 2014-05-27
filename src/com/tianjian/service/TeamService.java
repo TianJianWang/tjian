@@ -39,7 +39,7 @@ public class TeamService {
 	}
 	public boolean addTeamUser(TeamUser teamUser){
 		dao=new TeamDao();
-		team=dao.listTeamById(teamUser.getTeam_id());
+		team=dao.listTeamById(teamUser.getTeam().getTeam_id());
 		
 		if(team.getPower_type().equals("one")){
 			teamUser.setPower("no");
@@ -60,12 +60,7 @@ public class TeamService {
 //		}
 		return flat;
 	}
-	public boolean addTeamApply(TeamApply apply){
-		dao=new TeamDao();
-		boolean flat=dao.addTeamApply(apply);
-		return flat;
-		
-	}
+
 	public ArrayList<TeamUser> listTeamUserByTeam(int team_id){
 		dao=new TeamDao();
 		teamUserList=dao.listTeamUserByTeam(team_id);
@@ -80,6 +75,19 @@ public class TeamService {
 		dao=new TeamDao();
 		long teamUserCount=dao.listTeamUserCout(team_id);
 		return teamUserCount;
+	}
+	
+	public boolean addTeamApply(TeamApply apply){
+		dao=new TeamDao();
+		boolean flat=dao.addTeamApply(apply);
+		return flat;
+		
+	}
+	public boolean deleteTeamApplyById(int id){
+		dao=new TeamDao();
+		boolean flat=dao.deleteTeamApplyById(id);
+		return flat;
+		
 	}
 	public ArrayList<TeamApply> listTeamApplyByTeam(int team_id){
 		dao=new TeamDao();

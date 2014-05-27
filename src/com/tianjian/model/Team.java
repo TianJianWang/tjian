@@ -2,8 +2,9 @@ package com.tianjian.model;
 
 public class Team {
 	private int team_id;
-	private int pro_id;
-	private int header;
+	private Project project;
+	private User user;
+	private String team_picture;
 	private String name;
 	private int num;
 	private String major;
@@ -12,12 +13,13 @@ public class Team {
 	public Team() {
 		super();
 	}
-	public Team(int team_id, int pro_id, int header, String name, int num,
-			String major, String power_type, String decl) {
+	public Team(int team_id, Project project, User user, String team_picture,
+			String name, int num, String major, String power_type, String decl) {
 		super();
 		this.team_id = team_id;
-		this.pro_id = pro_id;
-		this.header = header;
+		this.project = project;
+		this.user = user;
+		this.team_picture = team_picture;
 		this.name = name;
 		this.num = num;
 		this.major = major;
@@ -30,17 +32,23 @@ public class Team {
 	public void setTeam_id(int team_id) {
 		this.team_id = team_id;
 	}
-	public int getPro_id() {
-		return pro_id;
+	public Project getProject() {
+		return project;
 	}
-	public void setPro_id(int pro_id) {
-		this.pro_id = pro_id;
+	public void setProject(Project project) {
+		this.project = project;
 	}
-	public int getHeader() {
-		return header;
+	public User getUser() {
+		return user;
 	}
-	public void setHeader(int header) {
-		this.header = header;
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public String getTeam_picture() {
+		return team_picture;
+	}
+	public void setTeam_picture(String team_picture) {
+		this.team_picture = team_picture;
 	}
 	public String getName() {
 		return name;
@@ -74,9 +82,10 @@ public class Team {
 	}
 	@Override
 	public String toString() {
-		return "Team [team_id=" + team_id + ", pro_id=" + pro_id + ", header="
-				+ header + ", name=" + name + ", num=" + num + ", major="
-				+ major + ", power_type=" + power_type + ", decl=" + decl + "]";
+		return "Team [team_id=" + team_id + ", project=" + project + ", user="
+				+ user + ", team_picture=" + team_picture + ", name=" + name
+				+ ", num=" + num + ", major=" + major + ", power_type="
+				+ power_type + ", decl=" + decl + "]";
 	}
-    
+
 }

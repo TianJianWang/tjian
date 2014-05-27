@@ -23,5 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   <body> 
         申请已递交，等待评定！<a href="ming/team_listTeam">继续浏览团队</a>
+        <a href="ming/team_listTeamApplyByTeam?team_id=1">审批申请团队</a>
   </body>
 </html>

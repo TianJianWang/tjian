@@ -2,19 +2,18 @@ package com.tianjian.model;
 
 public class TeamApply {
 	private int id;
-	private int team_id;
-	private int user_id;
+	private Team team;
+	private User user;
 	private String message;
 	private String time;
 	public TeamApply() {
 		super();
 	}
-	public TeamApply(int id, int team_id, int user_id, String message,
-			String time) {
+	public TeamApply(int id, Team team, User user, String message, String time) {
 		super();
 		this.id = id;
-		this.team_id = team_id;
-		this.user_id = user_id;
+		this.team = team;
+		this.user = user;
 		this.message = message;
 		this.time = time;
 	}
@@ -24,17 +23,17 @@ public class TeamApply {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getTeam_id() {
-		return team_id;
+	public Team getTeam() {
+		return team;
 	}
-	public void setTeam_id(int team_id) {
-		this.team_id = team_id;
+	public void setTeam(Team team) {
+		this.team = team;
 	}
-	public int getUser_id() {
-		return user_id;
+	public User getUser() {
+		return user;
 	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public String getMessage() {
 		return message;
@@ -50,8 +49,8 @@ public class TeamApply {
 	}
 	@Override
 	public String toString() {
-		return "TeamApply [id=" + id + ", team_id=" + team_id + ", user_id="
-				+ user_id + ", message=" + message + ", time=" + time + "]";
+		return "TeamApply [id=" + id + ", team=" + team + ", user=" + user
+				+ ", message=" + message + ", time=" + time + "]";
 	}
 	
 

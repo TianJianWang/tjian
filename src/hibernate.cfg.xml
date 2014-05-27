@@ -26,6 +26,7 @@
 	<mapping resource="com/tianjian/model/TeamUser.hbm.xml" />
 	<mapping resource="com/tianjian/model/TeamApply.hbm.xml" />
 	<mapping resource="com/tianjian/model/Project.hbm.xml" />
+	<mapping resource="com/tianjian/model/User.hbm.xml" />
 
 </session-factory>
 

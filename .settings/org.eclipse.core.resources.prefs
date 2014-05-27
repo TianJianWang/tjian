@@ -5,6 +5,7 @@ encoding//WebRoot/back/pages/updatesuccess.jsp=UTF-8
 encoding//src/com/tianjian/action/ProjectAction.java=UTF-8
 encoding//src/com/tianjian/action/ServiceAction.java=UTF-8
 encoding//src/com/tianjian/dao/ProjectDao.java=UTF-8
+encoding//src/com/tianjian/dao/SalePreDao.java=UTF-8
 encoding//src/com/tianjian/service/ProjectService.java=UTF-8
 encoding//src/com/tianjian/test/Test.java=UTF-8
 encoding//src/com/tianjian/util/Picture.java=UTF-8

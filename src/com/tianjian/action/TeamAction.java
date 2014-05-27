@@ -1,5 +1,6 @@
 package com.tianjian.action;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,6 +8,7 @@ import com.tianjian.model.Team;
 import com.tianjian.model.TeamApply;
 import com.tianjian.model.TeamUser;
 import com.tianjian.service.TeamService;
+import com.tianjian.util.Picture;
 
 public class TeamAction {
 	private Team team;
@@ -17,9 +19,30 @@ public class TeamAction {
 	private ArrayList<TeamUser> teamUserList;
 	private TeamService service;
 	private int team_id;
-	private int id;//TeamUser  id
+	private int id;//TeamUser  id  or  TeamApply id
 	private long teamUserCount;
+	private File picture;
+	private String pictureFileName;
+	private String pictureContentType;
 	
+	public File getPicture() {
+		return picture;
+	}
+	public void setPicture(File picture) {
+		this.picture = picture;
+	}
+	public String getPictureFileName() {
+		return pictureFileName;
+	}
+	public void setPictureFileName(String pictureFileName) {
+		this.pictureFileName = pictureFileName;
+	}
+	public String getPictureContentType() {
+		return pictureContentType;
+	}
+	public void setPictureContentType(String pictureContentType) {
+		this.pictureContentType = pictureContentType;
+	}
 	public ArrayList<Team> getTeamList() {
 		return teamList;
 	}
@@ -81,6 +104,7 @@ public class TeamAction {
 		service=new TeamService();
 		teamList=service.listTeam();
 		teamUserCount=service.listTeamUserCount(team_id)+1;
+		System.out.println("成功！");
 		return "listTeam";
 		
 	}
@@ -95,18 +119,20 @@ public class TeamAction {
 		team=service.listTeamById(team_id);
 		teamUserCount=service.listTeamUserCount(team_id)+1;
 		//listProjectById
-		
 		//listUserById
-		
 		return "listTeamDetail";
 	}
 	//添加（创建） 项目组
 	public String addTeam(){
+		Picture uplod=new Picture();
+		String picName=uplod.addPicture(picture, pictureFileName, pictureContentType);
+		team.setTeam_picture(picName);
 		service=new TeamService();
+		System.out.println("daozhemei a ");
 		boolean flat=service.addTeam(team);
 		if(flat){
 			return "addTeam";
-		}else
+		}else 
 		return "fail";
 	}
 	
@@ -135,7 +161,7 @@ public class TeamAction {
 	}
 	public String addTeamApply(){
 		if(apply.getTime()==null||"".equals(apply.getTime())){
-			apply.setTime(new Date().toGMTString());
+			apply.setTime(new Date().toLocaleString());
 		}
 		service=new TeamService();
 		boolean flat=service.addTeamApply(apply);
@@ -143,9 +169,28 @@ public class TeamAction {
 			return "addTeamApply";
 		}else
 		return "fail";
-		
+	}
+	public String deleteApplyAndAddTeamUser(){
+		teamUser.setTime(new Date().toLocaleString());
+		service=new TeamService();
+		boolean flat=service.deleteTeamApplyById(apply.getId());
+		if(flat){
+			boolean flat1=service.addTeamUser(teamUser);
+			if(flat1){
+				return "deleteApplyAndAddTeamUser";
+			}else return "fail";
+		}else return "fail";
+	}
+	public String deleteApply(){
+		service=new TeamService();
+		boolean flat=service.deleteTeamApplyById(apply.getId());
+		if(flat){
+			return "deleteApply";
+		}else
+		return "fail";
 	}
 	public String listTeamApplyByTeam(){
+		System.out.println("team_id"+team_id);
 		service=new TeamService();
 		applyList=service.listTeamApplyByTeam(team_id);
 		return "listTeamApplyByTeam";

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<package name="ming" extends="struts-default" namespace="/ming">
+
+<action name="pre_*" class="com.tianjian.action.SalePreAction" method="{1}">
+
+   <result name="listSalepreByIdFront">/update.jsp</result>
+   <result name="addSalepre" type="redirect">/front/pages/addSalPre.jsp</result>
+   <result name="updateSalepre" type="chain">pre_listSalepre</result>
+   <result name="deleteSalepreByIdFront" type="chain">pre_listSalepre</result>
+   <result name="listProjectSalepreDetial" >/front/pages/xiangqing.jsp</result>
+</action>
+
+<action name="finance_*" class="com.tianjian.action.FinanceAction" method="{1}" >
+   <result name="listFinance">/finance.jsp</result>
+   <result name="addFinance" >/financeSuccess.jsp</result>
+   <result name="yesFinance" >/notFinance.jsp</result>
+   <result name="notFinance" >/addFinance.jsp</result>
+   <result name="addItem" type="chain" >finance_listFinance</result>
+</action>
+
+<action name="team_*" class="com.tianjian.action.TeamAction" method="{1}">
+    <result name="addTeam">/addTeam.jsp</result>
+    <result name="listTeam">/front/pages/listAllTeam.jsp</result>
+    <result name="listTeamById">/front/pages/addTeamApply.jsp</result>
+    <result name="listTeamUserByTeam">/front/frontpages/teamUserList.jsp</result>
+    <result name="listTeamDetail">/front/pages/listTeamDetail.jsp</result>
+    <result name="addTeamApply">/success.jsp</result>
+    <result name="listTeamApplyByTeam">/front/pages/userApply.jsp</result>
+    <result name="deleteApplyAndAddTeamUser" type="chain">team_listTeamApplyByTeam</result>
+    <result name="deleteApply" type="chain">team_listTeamApplyByTeam</result>
+    
+</action>
+</package>
+
+</struts>

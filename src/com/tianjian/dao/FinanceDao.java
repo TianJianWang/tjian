@@ -12,7 +12,7 @@ public class FinanceDao {
 	private ArrayList<Finance> financeList;
 	private FinanceItem item;
 	private ArrayList<FinanceItem> itemList;
-	//通过项目Id 查询其对应的账单（只有一条）
+	//通过项目Id 查询其对应的账单（只有一条）【表情
 	public Finance listFinance(int pro_id){
 		    Session session=HibernateSessionFactory.getsSession();
 		    Transaction ts= session.beginTransaction();
@@ -75,7 +75,6 @@ public class FinanceDao {
 	    Transaction ts= session.beginTransaction();
 	     session.save(finance);
 	    flat="success";
-	   
 		ts.commit();
 	} catch ( Exception e) {
 		e.printStackTrace();
@@ -90,7 +89,7 @@ public class FinanceDao {
 		Session session=HibernateSessionFactory.getsSession();
 		Transaction ts= session.beginTransaction();
 		try {
-			session.save(item);
+	 		session.save(item);
 		flat="success";
 			ts.commit();
 		} catch ( Exception e) {

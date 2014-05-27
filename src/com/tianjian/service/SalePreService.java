@@ -8,9 +8,9 @@ public class SalePreService {
 	private SalePre salepre;
 	private ArrayList salepreList;
 	private SalePreDao dao;
-    public ArrayList listSalepre(){
+    public ArrayList listSalepre(int pro_id){
     	dao=new SalePreDao();
-    	salepreList=(ArrayList) dao.listSalepre();
+    	salepreList=(ArrayList) dao.listSalepre(pro_id);
 		return salepreList;
     } 
     public String addSalepre(SalePre salepre){

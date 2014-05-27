@@ -1,0 +1,58 @@
+h1{
+	color:#F00; 
+	text-align:center;
+}
+.content {
+	width: 500px;
+}
+#rounded-corner
+{
+	margin:0px;
+	width:400px;
+	text-align: left;
+	border-collapse: collapse;
+}
+#rounded-corner thead th.rounded-company
+{
+	width:26px;
+	background: #60c8f2;
+}
+#rounded-corner thead th.rounded-q4
+{
+background: #60c8f2 ;
+}
+#rounded-corner th
+{
+	padding: 8px;
+	font-weight: normal;
+	font-size: 13px;
+	color: #039;
+	background: #60c8f2;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #FFF;
+}
+#rounded-corner td
+{
+	padding: 8px;
+	background: #ecf8fd;
+	color: #669;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-top-color: #fff;
+	border-right-color: #FFF;
+}
+#rounded-corner tfoot td.rounded-foot-left
+{
+background: #ecf8fd ;
+}
+#rounded-corner tfoot td.rounded-foot-right
+{
+background: #ecf8fd ;
+}
+#rounded-corner tbody tr:hover td
+{
+background: #d2e7f0;
+}
