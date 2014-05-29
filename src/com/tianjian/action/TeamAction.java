@@ -122,7 +122,7 @@ public class TeamAction {
 		//listUserById
 		return "listTeamDetail";
 	}
-	//添加（创建） 项目组
+	//添加（创建)项目组
 	public String addTeam(){
 		Picture uplod=new Picture();
 		String picName=uplod.addPicture(picture, pictureFileName, pictureContentType);
@@ -173,6 +173,13 @@ public class TeamAction {
 	public String deleteApplyAndAddTeamUser(){
 		teamUser.setTime(new Date().toLocaleString());
 		service=new TeamService();
+		team=service.listTeamById(team_id);
+		String power=team.getPower_type();
+		if("none".equals(power)){
+			teamUser.setPower("no");
+		}else if("all".equals(power)){
+			teamUser.setPower("yes");
+		}else teamUser.setPower("many");
 		boolean flat=service.deleteTeamApplyById(apply.getId());
 		if(flat){
 			boolean flat1=service.addTeamUser(teamUser);

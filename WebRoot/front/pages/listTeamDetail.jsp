@@ -22,13 +22,14 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<link rel="stylesheet" href="front/css/bootstrap.css">
 <link rel="stylesheet" href="front/css/reset.css" type="text/css"
 	media="screen">
 <link rel="stylesheet" href="front/css/style.css" type="text/css"
 	media="screen">
 <link rel="stylesheet" href="front/css/layout.css" type="text/css"
 	media="screen">
-<link rel="stylesheet" href="front/css/bootstrap.css">
+
 	
 <style type="text/css">
 table.tbcss,table.tbcss td {
@@ -85,8 +86,9 @@ table.tbcss,table.tbcss td {
 			<%@ include file="footer.jsp" %>
 		</div>
 	</div>
+	<script src="front/js/jquery-2.1.0.min.js"></script>
 	<script src="front/js/bootstrap.js"></script>
-<script src="front/js/jquery-1.6.min.js"></script>
+
 	<script type="text/javascript">
 		Cufon.now();
 	</script>

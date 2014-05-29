@@ -7,5 +7,6 @@
 <include file="chen.xml"></include>
 <include file="xpj.xml"></include>
 <include file="ming.xml"></include>
+<include file="myd.xml"></include>
 
 </struts>

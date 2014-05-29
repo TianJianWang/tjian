@@ -10,11 +10,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <base href="<%=basePath%>">
 <title></title>
 <meta charset="utf-8">
+<link href="front/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="front/css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="front/css/style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="front/css/layout.css" type="text/css" media="screen">
 <script type="text/javascript" src="front/js/jquery-1.6.min.js"></script>
-<script src="front/front/js/cufon-yui.js" type="text/javascript"></script>
+<script src="front/js/cufon-yui.js" type="text/javascript"></script>
 <script src="front/js/cufon-replace.js" type="text/javascript"></script>
 <script src="front/js/Open_Sans_400.font.js" type="text/javascript"></script>
 <script src="front/js/Open_Sans_Light_300.font.js" type="text/javascript"></script> 
@@ -22,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="front/js/FF-cash.js" type="text/javascript"></script>
 <link href="front/css/application.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="front/css/projects.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="front/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
 <!--[if lt IE 7]>
 	<div style=' clear: both; text-align:center; position: relative;'>
 		<a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg" border="0"  alt="" /></a>

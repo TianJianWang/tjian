@@ -19,15 +19,15 @@
 <div class="projects-home-synopsis">
 <div class="projects-home-left-top" id="project_poster_video">
 
-<img src="myimages/${project.pro_picture }">
+<img src="myimages/${project.pro_picture }" width="500px" height="500px">
 
 </div>
 <div class="projects-home-left-synopsis">
  <center> <h3>${project.pro_title }</h3></center>
   
   <ul class="nav nav-tabs" id="myTab">
-							<li class="active" style="background-color: lightskyblue;"><a href='#first' data-toggle="tab" >项目详情</a></li>
-							<li style="background-color: lightskyblue;"><a href='#second' data-toggle="tab">项目账单</a></li>
+							<li class="active" style="background-color: lightgray;"><a href='#first' data-toggle="tab" >项目详情</a></li>
+							<li style="background-color: lightgray;"><a href='#second' data-toggle="tab">项目账单</a></li>
 		</ul>
 		<div class="tab-content">
 							<div class="tab-pane  active" id="first">

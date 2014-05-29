@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 encoding//WebRoot/back/pages/listallmyProject.jsp=UTF-8
 encoding//WebRoot/back/pages/listdetailbyid.jsp=UTF-8
 encoding//WebRoot/back/pages/updatesuccess.jsp=UTF-8
+encoding//WebRoot/index.jsp=GBK
 encoding//src/com/tianjian/action/ProjectAction.java=UTF-8
 encoding//src/com/tianjian/action/ServiceAction.java=UTF-8
 encoding//src/com/tianjian/dao/ProjectDao.java=UTF-8

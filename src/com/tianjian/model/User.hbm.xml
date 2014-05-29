@@ -4,23 +4,22 @@
 <hibernate-mapping>
 <!-- name指定POJO类，table指定对应数据库的表 -->
     <class name="com.tianjian.model.User" table="user">
-       	<id name="user_id" type="integer"><!-- name指定主键，type指定主键类型 -->
+       	<id name="user_id" type="java.lang.Integer">
+       	<column name="user_id"/>
+       	<generator class="increment"/>
+       	<!-- name指定主键，type指定主键类型 -->
      <!--  <generator class="foreign"> 采用foreign标志生成器，直接采用外键的属性值 <param name="property">detail</param> </generator> -->
       	</id>
-         <property name="email" type="string" />
-         <property name="password" type="string" />
-         <property name="nickname" type="string" />
-      
-         <property name="realname"  type="string"/>
-         <property name="idcard"  type="string"/>
-         <property name="user_address"  type="string"/>
-         <property name="user_picture"  type="string"/>
-         <property name="profession"  type="string"/>
-         
-      <!-- name表示属性名字，class表示被关联的类的名字，
-      		constrained="true"表明当前的主键上存在一个外键约束-->
-      <!--  <one-to-one name="detail" class="com.myd.util.Detail" constrained="true"/>-->	
-   
-   
+	     <property name="nickname" type="java.lang.String" />
+      	 <property name="password" type="java.lang.String" />
+         <property name="realname" type="java.lang.String" />
+         <property name="idcard" type="java.lang.String" />
+         <property name="email"  type="java.lang.String"/>
+         <property name="user_address"  type="java.lang.String"/>
+         <property name="user_picture"  type="java.lang.String"/>
+         <property name="profession"  type="java.lang.String"/>
+         <property name="user_info"  type="java.lang.String"/>
+         <property name="unionType"  type="java.lang.String"/>
+      	   <property name="unionId"  type="java.lang.String"/>
    	</class>
-</hibernate-mapping>
+</hibernate-mapping>                                                                              

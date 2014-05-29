@@ -22,13 +22,14 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<link rel="stylesheet" href="front/css/bootstrap.css">
 <link rel="stylesheet" href="front/css/reset.css" type="text/css"
 	media="screen">
 <link rel="stylesheet" href="front/css/style.css" type="text/css"
 	media="screen">
 <link rel="stylesheet" href="front/css/layout.css" type="text/css"
 	media="screen">
-<link rel="stylesheet" href="front/css/bootstrap.css">
+
 	
 <style type="text/css">
 table.tbcss,table.tbcss td {

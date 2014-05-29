@@ -85,7 +85,8 @@
       ${team.decl }
     </div> 
   </div>
-<a href="ming/team_listTeamById?team_id=${team.team_id }"> <h1 style="text-align: center;"> 加入我们</h1></a>
+<center><a href="ming/team_listTeamById?team_id=${team.team_id }"> <button type="button" data-loading-text="正在加载..." class="btn btn-primary">
+         申请加入</button></a></center>
     
  
 					

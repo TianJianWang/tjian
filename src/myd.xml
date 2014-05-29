@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+
+ 
+<package name="Use" extends="struts-default" namespace="/user">
+
+<!--验证登陆-->
+<action name="UserAction_checkLogin" class="com.tianjian.action.UserAction" method="checkLogin">
+<result name="success">/index.jsp</result>
+<result name="failure">/front/pages/fail.jsp</result>
+</action>
+
+<!--忘记密码-->
+<action name="UserAction_forgetPassword" class="com.tianjian.action.UserAction" method="forgetPassword">
+<result name="success">/front/pages/changePasssword.jsp</result>
+<result name="failure">/front/pages/fail.jsp</result>
+</action>
+
+<!--改变密码-->
+ <action name="UserAction_changePassword" class="com.tianjian.action.UserAction" method="changePassword">
+<result name="success">/front/pages/succ.jsp</result>
+<result name="failure">/front/pages/fail.jsp</result>
+</action>
+
+ <!--增加用户-->
+<action name="UserAction_addUser" class="com.tianjian.action.UserAction" method="addUser">
+<result name="success" type="redirect">/front/pages/addSucc.jsp</result>
+<result name="failure">/front/pages/fail.jsp</result>
+</action>
+
+<!--按邮箱查找用户-->
+<action name="UserAction_listUserByEmail" class="com.tianjian.action.UserAction" method="listUser">
+<result name="success">/front/pages/userInfo.jsp</result>
+<result name="failure">/front/pages/fail.jsp</result>
+</action>
+
+<!--更新用户信息-->
+<action name="UserAction_updateUser" class="com.tianjian.action.UserAction" method="updateUser">
+<result name="success">/front/pages/addSucc.jsp</result>
+<result name="failure">/front/pages/userInfo.jsp</result>
+</action>
+
+<!--退出登陆-->
+<action name="UserAction_exitLogin" class="com.tianjian.action.UserAction" method="exitLogin">
+<result name="success">/index.jsp</result>
+</action>
+
+</package>
+</struts>

@@ -48,7 +48,13 @@
 	<script type="text/javascript" src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
 <![endif]-->
-
+<script>  
+function showmodal()  
+{  
+ var ret = window.showModalDialog("front/pages/login.jsp?temp="+Math.random());  
+ 
+}  
+</script> 
 </head>
 <body id="page1">
 	

@@ -40,8 +40,8 @@
 		
 			<br><br>
 			<form action="ming/team_addTeamApply" method="post">
-			<input type="hidden" name="apply.team_id" value="${team.team_id }"/>
-			<input type="hidden" name="apply.user_id" value="1"/>
+			<input type="hidden" name="apply.team.team_id" value="${team.team_id }"/>
+			<input type="hidden" name="apply.user.user_id" value="1"/>
                 
           <!--        <label for="input2" class="col-sm-2 control-label">申请时间</label>
              <div class="col-sm-10"> -->
@@ -61,7 +61,7 @@
             </div>
             <br><br>  <br><br> <br><br>  <br><br>
           <center>  <button type="submit" data-loading-text="正在加载..." class="btn btn-primary">
-         申请加入
+         提交
             </button></center>
             </form>
   				
