@@ -60,7 +60,7 @@ public class Picture extends ActionSupport{
 		this.picture = picture;
 	}
 	public String addPicture(File picture,String pictureFileName, String pictureContentType) {
-		System.out.println("杩涘叆鍑芥暟");
+		System.out.println("进入函数");
 		// TODO Auto-generated method stub
 	    InputStream in = null;
 		try {

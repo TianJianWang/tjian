@@ -1,5 +1,4 @@
 package com.tianjian.service;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -40,8 +39,6 @@ public class ProjectService {
 		for(i=0;i<projectList.size();i++){
 			String star=projectList.get(i).getPro_startDate();
 			String end=projectList.get(i).getPro_endDate();
-			
-		
 			String	newstar=star.substring(2, 4)+'/'+(star.substring(5, 7))+'/'+star.substring(8, 10);
 			String	newend=end.substring(2, 4)+'/'+(end.substring(5, 7))+'/'+end.substring(8, 10);
 			projectList.get(i).setPro_startDate(newstar);
@@ -52,13 +49,13 @@ public class ProjectService {
 	return projectList;
 	}
 	//方法六
-	public ArrayList listallmyProject(){
+	public ArrayList<Project> listallmyProject(){
 		projectList=prod.listallmyProject();
 		System.out.println("Service中的查询个人所有项目的方法：");
 	return projectList;
 	}
 	//方法七
-	public ArrayList listdetailbyid(int pro_id){
+	public ArrayList<Project> listdetailbyid(int pro_id){
 		projectList=prod.listdetailbyid(pro_id);
 		System.out.println("Service中的通过pro_id查询项目的方法：");
 	return projectList;

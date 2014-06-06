@@ -13,16 +13,26 @@
 <constant name="struts.multipart.saveDir" value="/temp" />
 <package name="xpj" namespace="/xpj" extends="struts-default">
 <action name="project_*" class="com.tianjian.action.ProjectAction" method="{1}">
-<result name="adderror">/back/pages/addProject.jsp</result>
-<result name="addsuccess" type="redirect">/back/pages/addsuccess.jsp</result>
-<result name="querysuccess">/front/pages/list.jsp</result>
-<result name="listallmyProject">/back/pages/listallmyProject.jsp</result>
- <result name="listprojectbypagesuccess">/back/pages/listallmyProject.jsp</result> 
-<!--此处项目路径找不到 -->
-<result name="updatesuccess" >/back/pages/updatesuccess.jsp</result>
-<result name="deleteprojectsuccess" >/back/pages/deleteprojectsuccess.jsp</result>
-<result name="listdetailbyid" >/back/pages/listdetailbyid.jsp</result>
 
+<!-- <result name="adderror">/back/pages/addProject.jsp</result> -->
+<result name="adderror">/front/pages/submit.jsp</result>
+
+<result name="addsuccess" type="redirect">/back/pages/addsuccess.jsp</result>
+
+<result name="querysuccess">/front/pages/list.jsp</result> 
+
+<result name="listallmyProject">/front/pages/listAllMyProject.jsp</result>
+
+<!-- <result name="listallmyProject">/back/pages/listallmyProject.jsp</result> -->
+ <!-- <result name="listprojectbypagesuccess">/back/pages/listallmyProject.jsp</result>  -->
+ 
+ <result name="deleteprojectsuccess" >/back/pages/deleteprojectsuccess.jsp</result>
+ 
+ 
+ <!-- 修改之后的跳转页面 -->
+<result name="listdetailbyid" >/front/pages/submit2.jsp</result>
+
+<result name="updatesuccess" >/front/pages/listAllMyProject.jsp</result>
 </action>
 
 </package>

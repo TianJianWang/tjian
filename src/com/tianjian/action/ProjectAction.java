@@ -118,6 +118,7 @@ public int getPage() {
 	}
 public String addProject(){
 		Picture pic=new Picture();
+		
 		String fileName=pic.addPicture(picture, pictureFileName, pictureContentType);
 		System.out.println("zhesiasdnfklasndlfkn as"+fileName);
 		pro.setPro_picture(fileName);
@@ -133,7 +134,12 @@ public String deleteProject(){
 		return flag;
 	}
 public String updateProject(){
+	    Picture pic=new Picture();
+	
+	    String fileName=pic.addPicture(picture, pictureFileName, pictureContentType);
+	    pro.setPro_picture(fileName);
 		String flag=pros.updateProject(pro);
+		
 		System.out.println("action 中 修改项目的方法 " +flag);
 		return flag;
 	}
