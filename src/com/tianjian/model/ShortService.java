@@ -8,19 +8,43 @@ public class ShortService {
 	private String short_info;
 	private String com_url;
 	private String com_picture;
+	private String type_name;
 	public ShortService() {
 		super();
 	}
+	
 	public ShortService(int ser_id, String com_name, int score,
-			String short_info, String com_url,String com_picture) {
+			String short_info, String com_url, String com_picture) {
 		super();
 		this.ser_id = ser_id;
 		this.com_name = com_name;
 		this.score = score;
 		this.short_info = short_info;
 		this.com_url = com_url;
-		this.com_picture=com_picture;
+		this.com_picture = com_picture;
 	}
+
+	public ShortService(int ser_id, String com_name, int score,
+			String short_info, String com_url, String com_picture,
+			String type_name) {
+		super();
+		this.ser_id = ser_id;
+		this.com_name = com_name;
+		this.score = score;
+		this.short_info = short_info;
+		this.com_url = com_url;
+		this.com_picture = com_picture;
+		this.type_name = type_name;
+	}
+
+	public String getType_name() {
+		return type_name;
+	}
+
+	public void setType_name(String type_name) {
+		this.type_name = type_name;
+	}
+
 	public int getSer_id() {
 		return ser_id;
 	}
@@ -57,11 +81,14 @@ public class ShortService {
 	public void setCom_picture(String com_picture) {
 		this.com_picture = com_picture;
 	}
+
 	@Override
 	public String toString() {
 		return "ShortService [ser_id=" + ser_id + ", com_name=" + com_name
 				+ ", score=" + score + ", short_info=" + short_info
-				+ ", com_url=" + com_url + "]";
+				+ ", com_url=" + com_url + ", com_picture=" + com_picture
+				+ ", type_name=" + type_name + "]";
 	}
+	
 	
 }

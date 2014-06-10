@@ -1,0 +1,177 @@
+#main {
+	text-align: center;
+	padding: 0px;
+	height: auto;
+	width: 953px;
+	font-size: 14px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+#topinfo {
+	height: 200px;
+	width: 951px;
+	background-color: #00FF33;
+}
+.type{
+	height: auto;
+	width: 951px;
+	text-align:left;
+}
+.bigtype{
+	width: 950px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+}
+.smalltype{
+	width: 950px;
+	border-top-width: 3px;
+	border-top-color: #FF6633;
+	border-top-style: solid;
+	font-size: 14px;
+}
+.medium {
+	height: 300px;
+	width: 950px;
+	text-align:left;
+	border-top-width: 3px;
+	border-top-color: #00CCCC;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.middle {
+	height: auto;
+	width: 951;
+}
+.m_left {
+	height: auto;
+	width: 680px;
+	float:left;
+	min-height: 1000px;
+}
+.detail_type {
+	border-bottom-color: #FF6633;
+	border-bottom-style: solid;
+	font-size: 16px;
+	text-align: left;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	height: 40px锛�
+}
+.m_right{
+	height: auto;
+	width: 200px;
+	float:left;
+	margin-top:41px;
+	padding-left:15px;
+	border-left-width: 3px;
+	border-left-style: solid;
+	border-left-color: #00CCCC;
+	min-height: 1000px;
+}
+
+body {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+.top {
+	background-color: #CCFFFF;
+	width: 950px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.bottom {
+	width: 950px;
+	height: 269px;
+	text-align: left;
+}
+
+#topleft {
+	float: left;
+	font-family: "鏂板畫浣�;
+	font-size: 18px;
+	color: #0066FF;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+}
+
+.small {
+	width: 173px;
+	float: left;
+	line-height: 14px;
+	margin-left: 10px;
+	border: none;
+	color: #666666;
+}
+
+a:visited {
+	color: #0000FF;
+}
+
+#topright {
+	float: right;
+}
+
+a {
+	text-decoration: none;
+	color: #0000FF;
+}
+
+a:hover {
+	color: #FF0000;
+}
+
+.tinyimg {
+	height: 125px;
+	width: 173px;
+	overflow: hidden;
+}
+
+.tinyname {
+	height: 30px;
+	width: 173px;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.tinyintro {
+	height: 56px;
+	width: 173px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.tinygrade {
+	height: 30px;
+	width: 173px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.tinyurl {
+	height: 30px;
+	width: 173px;
+	height: 30px;
+	line-height: 30px;
+}
+
+#topright span {
+	color: #666666;
+}
+
+img {
+	border: none;
+}

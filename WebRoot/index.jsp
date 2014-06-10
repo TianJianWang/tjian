@@ -54,6 +54,17 @@ function showmodal()
  var ret = window.showModalDialog("front/pages/login.jsp?temp="+Math.random());  
  
 }  
+
+	  function isLogin(email){
+	    if(email==null){
+	    alert("您还没有登陆，请登录！");
+	    return false;
+	    }else{
+	    return true;
+	    }
+	  }
+	
+	
 </script> 
 </head>
 <body id="page1">
@@ -68,9 +79,9 @@ function showmodal()
 						<ul class="menu">
 						  <li><a class="active" href="front/pages/index.jsp">Home Page</a></li>
 						  <li><a href="xpj/project_queryProject">Order and Invest</a></li>
-						  <li><a href="front/pages/services.jsp">Audit Accounts</a></li>
+						  <li><a href="service/service_queryFrontBigTypeDisplayShortService">Service</a></li>
 						  <li><a href="ming/team_listTeam">Join Projects</a></li>
-						  <li class="last-item"><a href="front/pages/contacts.jsp">Submit Project</a></li>
+						  <li class="last-item"><a href="front/pages/usercenter.jsp" onclick="return isLogin(${User.email})">user center</a></li>
 						</ul>
 					</nav>
 				</div>

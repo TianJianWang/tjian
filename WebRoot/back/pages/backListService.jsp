@@ -25,9 +25,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  heihei
+  
     <div>
-   <ul>
+   <ul style="list-style-type: none">
    <s:iterator value="serviceList"  status="st" >
    <s:if test="#st.odd">
    <li style="background-color: gray">
@@ -56,37 +56,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
      
     </div>
-    <div>
-    为什么显示不出来呢
-    <table>
-    <tr>
-    <s:iterator value="serviceList" status="st" >
    
-    
-    <td>
-    <s:property value="ser_id"/>
-    <s:property value="com_name"/>
-    <s:property value="score"/>
-    
-    <s:property value="com_url"/>
-    <img src="<s:property value="com_picture"/>">
-    <s:property value="short_info" escape="false"/>
-    
-    </td>
-    <s:if test="#st.last">
-    </tr>
-    </s:if>
- <s:elseif test="#st.getCount()%3==0">
- </tr><tr>
- </s:elseif>
-     </s:iterator>
-    </table>
-
-    </div>
-  <div>
- 
-  
-  
-  </div>
   </body>
 </html>

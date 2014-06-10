@@ -3,9 +3,13 @@ package com.tianjian.action;
  
 
 import java.io.File;
+import java.util.ArrayList;
 
 import com.opensymphony.xwork2.ActionContext;
+import com.tianjian.model.Team;
 import com.tianjian.model.User;
+import com.tianjian.service.ProjectService;
+import com.tianjian.service.TeamService;
 import com.tianjian.service.UserService;
 import com.tianjian.service.imageService;
 import com.tianjian.util.Picture;
@@ -15,7 +19,7 @@ public class UserAction {
       private  User   user;
 	  private imageService imageService;
 	  private String email;
-	 
+	  
 	public String getEmail() {
 		return email;
 	}
@@ -37,7 +41,7 @@ public class UserAction {
 	  }
 	  
 	  
-	 //µÇÂ½Ğ£Ñé
+	 //ï¿½ï¿½Â½Ğ£ï¿½ï¿½
      public String checkLogin(){
     	 System.out.println("password="+user.getPassword());
     	 System.out.println("username="+user.getEmail());
@@ -45,17 +49,22 @@ public class UserAction {
     	 check=userService.checkLogin(user.getEmail(), user.getPassword());
     	 
     	 if(check){
-    		 ActionContext.getContext().getSession().put("User", user);    
+    		 
+    		 TeamService teamService=new TeamService();
+    		 user=userService.listUserByEmail(user.getEmail());
+    		 ActionContext.getContext().getSession().put("User", user);
+    		 int applyCount= teamService.listteamApplyCountInfo(user.getUser_id());//å¾€sessionä¸­æ”¾å…¥å…³äºè¯¥ç”¨æˆ·é¡¹ç›®ç»„çš„ç”³è¯·æˆå‘˜æ•°é‡ ç”¨äºæ˜¾ç¤ºåœ¨ç”¨æˆ·ä¸ªäººä¸­å¿ƒ
+    		 ActionContext.getContext().getSession().put("applyCount", applyCount);
     		 return "success";
     	 }else{
     		 return "failure";
-    		
     	 }
      }
+  
      
-     
-      //Íü¼ÇÃÜÂë
+      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      public String forgetPassword(){
+    	 System.out.println("å¸¦éƒ½å¥½æ²¡"+user.getRealname());
     	 boolean check=false;      	  
     	 check=userService.forgetPassword(user.getEmail().trim(),user.getRealname().trim());
     	 if(check){
@@ -66,7 +75,7 @@ public class UserAction {
      }
        
      
-      //ĞŞ¸ÄÃÜÂë
+      //ï¿½Ş¸ï¿½ï¿½ï¿½ï¿½ï¿½
      public String changePassword(){
     	 boolean check=false;
     	 check=userService.changePassword(user.getEmail().trim(), user.getPassword().trim());
@@ -78,7 +87,7 @@ public class UserAction {
      }
      
      
-      //Ìí¼Ó»áÔ±
+      //ï¿½ï¿½Ó»ï¿½Ô±
      public String addUser(){
     	 boolean check=false;
     	 check=userService.addUser(user);
@@ -89,7 +98,7 @@ public class UserAction {
     	 }
      }
      
-     //²éÑ¯ĞÅÏ¢
+     //ï¿½ï¿½Ñ¯ï¿½ï¿½Ï¢
      public String listUser(){
     	 boolean check=false;
     	 user=userService.listUserByEmail(email);
@@ -106,7 +115,7 @@ public class UserAction {
 		this.imageService = imageService;
 	}
 	
-	//ĞŞ¸ÄĞÅÏ¢
+	//ï¿½Ş¸ï¿½ï¿½ï¿½Ï¢
      public String updateUser(){
     	 boolean check=false;
     	
@@ -127,7 +136,7 @@ public class UserAction {
      }
      
      
-      //ÍË³öµÇÂ½
+      //ï¿½Ë³ï¿½ï¿½ï¿½Â½
      public String exitLogin(){        	 
          ActionContext.getContext().getSession().clear();    		     
     	 return "success";

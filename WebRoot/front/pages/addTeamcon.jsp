@@ -7,10 +7,12 @@
 		<div class="wrapper p4">
 			<div class="col-3">
 				<div class="indent">
-
+				
+                     <%@include file="11.jsp"%>
+					
 					<div class="team">
-
-						<form name="finance_item" action="bianjizisuccess.html">
+                          
+						<form  action="ming/team_addTeam" method="post" enctype="multipart/form-data">
 							<br />
 							<br />
 							<br />
@@ -18,12 +20,13 @@
 							<br /> <br />
 
 							<table width="600" align="center">
-								<input class="kuan" type="hidden" name="method" value="">
+								<input type="hidden" name="team.user.user_id" value="${User.user_id }">
+								<input  type="hidden" name="team.project.pro_id" value="1"/>
 								<tr>
 									<td width="107" height="60"><div align="right">发起人：</div>
 									</td>
 									<td width="281"><input class="kuan" type="text"
-										name="item_person" id="item_personId" />
+										name="email" readonly="readonly" value="${User.email }" id="item_personId" />
 									</td>
 								</tr>
 
@@ -32,21 +35,21 @@
 									<td width="107" height="60"><div align="right">项目组名：</div>
 									</td>
 									<td width="281"><input class="kuan" type="text"
-										name="name" id="nameId" />
+										name="team.name" id="nameId" />
 									</td>
 								</tr>
 								<tr>
 									<td width="107" height="60"><div align="right">项目组图片：</div>
 									</td>
 									<td width="281"><input class="kuan" type="file"
-										name="team_picture" id="team_pictureId" />
+										name="picture" id="team_pictureId" />
 									</td>
 								</tr>
 
 								<tr>
 									<td width="107" height="60"><div align="right">所需人数：</div>
 									</td>
-									<td width="281"><input class="kuan" type="text" name="num"
+									<td width="281"><input class="kuan" type="text" name="team.num"
 										id="numId" />
 									</td>
 								</tr>
@@ -54,17 +57,17 @@
 									<td width="107" height="60"><div align="right">专业：</div>
 									</td>
 									<td width="281"><input class="kuan" type="text"
-										name="major" id="majorId" />
+										name="team.major" id="majorId" />
 									</td>
 								</tr>
 								<tr>
 									<td width="107" height="60"><div align="right">权限类型：</div>
 									</td>
-									<td width="281"><select name="power_type"
+									<td width="281"><select name="team.power_type"
 										id="power_typeId">
-											<option name="1">One</option>
-											<option name="2">Many</option>
-											<option name="3">All</option>
+											<option name="team.power_type" value="one">One</option>
+											<option name="team.power_type" value="many">Many</option>
+											<option name="team.power_type" value="all">All</option>
 									</select>
 									</td>
 								</tr>
@@ -73,7 +76,7 @@
 									<td colspan="2"><p>宣言：</p>
 										<div class="editorarea">
 
-												<textarea cols="80" id="editor1" name="decl" rows="10"></textarea>
+												<textarea cols="80" id="editor1" name="team.decl" rows="10"></textarea>
 											<ckfinder:setupCKEditor basePath="/tianjianwang/ckfinder/"
 												editor="editor1" />
 											<ckeditor:replace replace="editor1"

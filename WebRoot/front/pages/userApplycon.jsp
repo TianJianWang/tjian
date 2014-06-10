@@ -9,7 +9,7 @@
                             
 
  
- 
+ <%@include file="11.jsp"%>
  
  
   <div class="table table-bordered">
@@ -22,7 +22,7 @@
         
           <tr style="height: 45px;">
           <td rowspan="5" style="width: 100px; height: 45px;" >
-                         项目发起人<br><br>
+                         申请人<br><br>
           <div style="width: 50px;height: 50px;">
               <img width="50px" height="50px" alt="" src="myimages/<s:property value="#list.user.user_picture"/>"><br>
                <s:property value="#list.user.realname"/>

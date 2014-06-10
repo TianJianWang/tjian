@@ -17,7 +17,7 @@ public class UserDAO {
 	private Session session;
 	
 
-	// µÇÂ½Ð£Ñé
+	// ï¿½ï¿½Â½Ð£ï¿½ï¿½
 	public boolean checkLogin(String email, String password) {
 		@SuppressWarnings("unused")
 		boolean flag = false;
@@ -53,7 +53,7 @@ public class UserDAO {
 		return flag;
 	}
 
-	// Íü¼ÇÃÜÂë
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public boolean forgetPassword(String email,String realname) {
 		session = HibernateSessionFactory.getsSession();
 	    boolean flag = false;
@@ -67,6 +67,7 @@ public class UserDAO {
 			return flag;
 		 }else{
 			for (User user:users) {
+				System.out.println(realname);
 				if (user.getEmail().trim().equals(email)) {
 					if(realname.equals(user.getRealname().trim())){
 						flag = true;
@@ -81,7 +82,7 @@ public class UserDAO {
 		return flag;
 	}
 
-	// ÐÞ¸ÄÃÜÂë
+	// ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½
 	public boolean changePassword(String email, String password) {
 		boolean flag = true;
 		int count=0;
@@ -108,7 +109,7 @@ public class UserDAO {
 
 	}
 
-	// Ìí¼Ó»áÔ±
+	// ï¿½ï¿½Ó»ï¿½Ô±
 	public boolean addUser(User user) {
 		boolean flag = true;
 		try {
@@ -130,7 +131,7 @@ public class UserDAO {
 
 	}
 
-	// ²éÑ¯¸öÈËÐÅÏ¢
+	// ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	public User listUserByEmail(String email) {
 		session = HibernateSessionFactory.getsSession();
 		List<User> users=new ArrayList<User>();
@@ -157,7 +158,7 @@ public class UserDAO {
 					 
 			                         }			
 			  }else{    
-				  System.out.println("DAO²éÑ¯ÐÅÏ¢²»´æÔÚ½á¹û¼¯£º" + users.size());
+				  System.out.println("DAOï¿½ï¿½Ñ¯ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½Ú½ï¿½ï¿½" + users.size());
 			            return null;        	  
 			                      }
 			HibernateSessionFactory.closeSession();
@@ -173,7 +174,7 @@ public class UserDAO {
 
 	}
 
-	// ÐÞ¸ÄÐÅÏ¢
+	// ï¿½Þ¸ï¿½ï¿½ï¿½Ï¢
 	public boolean updateUser(User user) {
 		boolean flag = true;
 		try {
@@ -196,7 +197,7 @@ public class UserDAO {
 
 	}
 
-	// ÍË³öµÇÂ½
+	// ï¿½Ë³ï¿½ï¿½ï¿½Â½
 	public boolean exitLogin(String email) {
 		boolean flag = true;
 		try {
@@ -213,7 +214,7 @@ public class UserDAO {
 		}
 
 	}
-    //É¾³ýÐÅÏ¢
+    //É¾ï¿½ï¿½ï¿½ï¿½Ï¢
 	public boolean deleteUser(String email) {
 		boolean flag = true;
 		int count=0;

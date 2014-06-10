@@ -2,10 +2,12 @@ package com.tianjian.service;
 
 import java.util.ArrayList;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.tianjian.dao.TeamDao;
 import com.tianjian.model.Team;
 import com.tianjian.model.TeamApply;
 import com.tianjian.model.TeamUser;
+import com.tianjian.model.User;
 
 public class TeamService {
 	private Team team;
@@ -51,7 +53,7 @@ public class TeamService {
 		
 		
 		boolean flat=dao.addTeamUser(teamUser);
-		//team�ܵ�����
+		//team�ܵ�����
 //		if(flat){
 //			int newNum=0;
 //			newNum=team.getNum()-1;
@@ -60,7 +62,7 @@ public class TeamService {
 //		}
 		return flat;
 	}
-
+    //查询出某个项目组的所有成员  
 	public ArrayList<TeamUser> listTeamUserByTeam(int team_id){
 		dao=new TeamDao();
 		teamUserList=dao.listTeamUserByTeam(team_id);
@@ -77,21 +79,61 @@ public class TeamService {
 		return teamUserCount;
 	}
 	
+	public ArrayList<Team> listMyTeam(int userId){
+		dao=new TeamDao();
+		teamList=dao.listMyTeam(userId);
+		return teamList;
+		
+	}
+	//获取关于某个用户项目组的所有申请成员总数
+	public int listteamApplyCountInfo(int userId){
+		   
+		 ArrayList<Team> teamList=listMyTeam(userId);
+		 int n=0;
+		 int applyCount=0;
+		 for(Team team:teamList){
+			 applyCount=applyCount+listTeamApplyCountByTeam(team.getTeam_id());
+		 }
+    	 return applyCount;
+	}
+	 
 	public boolean addTeamApply(TeamApply apply){
 		dao=new TeamDao();
 		boolean flat=dao.addTeamApply(apply);
 		return flat;
 		
 	}
+	//查询某个项目组现有的申请人数
+	public int listTeamApplyCountByTeam(int team_id){
+		dao=new TeamDao();
+		int teamApplyCount=Integer.parseInt(dao.listTeamApplyCountByTeam(team_id)+"");
+		
+		return teamApplyCount;
+		
+	}
+	//删除项目组申请表中的一条数据
 	public boolean deleteTeamApplyById(int id){
 		dao=new TeamDao();
 		boolean flat=dao.deleteTeamApplyById(id);
 		return flat;
 		
 	}
+	//查询出某个项目组的所有现有的申请人员
 	public ArrayList<TeamApply> listTeamApplyByTeam(int team_id){
 		dao=new TeamDao();
 		applyList=dao.listTeamApplyByTeam(team_id);
+		return applyList;
+	}
+	public ArrayList<TeamApply> listTeamApplyByUser(int team_id){
+		User user=(User) ActionContext.getContext().getSession().get("User");
+		UserService userService=new UserService();
+		user=userService.listUserByEmail(user.getEmail());
+		 ArrayList<Team> teamList=listMyTeam(user.getUser_id());
+		dao=new TeamDao();
+		applyList=new ArrayList<TeamApply>();
+		for(Team team:teamList){
+			applyList.addAll(dao.listTeamApplyByTeam(team.getTeam_id()));
+		}
 		return applyList;
 	}
 			

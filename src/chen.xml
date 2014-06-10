@@ -8,8 +8,19 @@
 <action name="service_*" class="com.tianjian.action.ServiceAction" method="{1}">
 <result name="backDetailService">/back/pages/backDetailService.jsp</result>
 <result name="backShortService" >/back/pages/backListService.jsp</result>
+<result name="bigTypeList" >/back/pages/bigTypeList.jsp</result>
+<result name="smallTypeList" >/back/pages/smallTypeList.jsp</result>
+<result name="frontShortService" >/front/pages/shortService.jsp</result>
+<result name="frontDetailService" >/front/pages/detailService.jsp</result>
+<result name="frontSmallShortService" >/front/pages/smallTypeshortService.jsp</result>
+<result name="frontServiceDisplay" >/front/pages/services.jsp</result>
+<result name="beforeAddService" >/back/pages/addSer.jsp</result>
+<result name="beforeAddServiceSmallType" >/back/pages/addServiceSmallType.jsp</result>
+<result name="beforeAlter" >/back/pages/alterSer.jsp</result>
+<result name="addsuccess" type="redirect">/back/pages/addSerSuccess.jsp</result>
 <result name="success" >/back/pages/backtips.jsp</result>
 <result name="fail">/back/pages/backtips.jsp</result>
+<result name="addfail" type="redirect">/back/pages/addSerFail.jsp</result>
 </action>
 
 </package>

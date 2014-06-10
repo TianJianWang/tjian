@@ -28,6 +28,9 @@
 	<mapping resource="com/tianjian/model/Project.hbm.xml" />
 	<mapping resource="com/tianjian/model/User.hbm.xml" />
 
+	<mapping resource="com/tianjian/model/Type.hbm.xml" />
+ <mapping resource="com/tianjian/model/Service.hbm.xml" />
+ 
 </session-factory>
 
 </hibernate-configuration>

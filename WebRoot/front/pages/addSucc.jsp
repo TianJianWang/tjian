@@ -107,11 +107,11 @@
 				<ul class="menu">
 					<li><a class="active" href="index.html">Home Page<br />主页</a>
 					</li>
-					<li><a href="news.html">Order and Invest<br />预订与投资</a>
+					<li><a href="xpj/project_queryProject">Order and Invest<br />预订与投资</a>
 					</li>
 					<li><a href="services.html">Audit Accounts<br />进度审计</a>
 					</li>
-					<li><a href="products.html">Join Projects<br />加入项目</a>
+					<li><a href="ming/team_listTeam">Join Projects<br />加入项目</a>
 					</li>
 					<li class="last-item"><a href="contacts.html">Submit
 							Project<br />发布项目</a>

@@ -92,6 +92,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			     <center>
 				<div class="slider-wrapper"  align="center">
 					<div class="slider" align="center" >
+						
+						
+						
 						<form action="user/UserAction_updateUser" class="form-horizontal" style="background-color: white;width: 950px;height:380px;overflow: scroll;border-radius:2em;margin-left: 2px;margin-bottom: 10px;" role="form"  enctype="multipart/form-data" method="post" >
 						          <input type="hidden" name="user.user_id" value='<s:property value="user.user_id" />'>
 							<div class="form-group">

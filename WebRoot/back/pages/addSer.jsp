@@ -22,29 +22,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+  <script type="text/javascript" src="back/js/service.js"></script>
   </head>
   
   <body>
-  private int ser_id;
-	private String com_name;
-	private int score;
-	private String com_info;
-	private String short_info;
-	private String com_url;
+  
   <div>
-  <form action="service/service_addService" method="post" enctype="multipart/form-data" onsubmit="return confirm('您确认要添加服务吗？')">
-  
-  公司名字<input type="text" name="service.com_name"><br>
-  服务分数<input type="text" name="service.score"><br>
+  <s:form action="service/service_addService" method="post" enctype="multipart/form-data" onsubmit="return upload()" cssStyle="width:600px">
+  <s:doubleselect label="服务类型" list="linktype.bigTypelist" listKey="bigtype_id" listValue="bigtype_name" doubleList="linktype.typemap[top.bigtype_id]" doubleListKey="smalltype_id" doubleListValue="smalltype_name" doubleName="service.ser_type.type_id" headerKey="linktype.bigTypelist[1].bigtype_id" ></s:doubleselect>
+ <s:textfield id="com_name" name="service.com_name" label="公司名字"></s:textfield><br>
+<s:textfield   id="score" name="service.score" label=" 服务分数"></s:textfield><br>
  
-  公司链接<input type="text" name="service.com_url"><br>
-  <input type="file" name="imageService.image">
-  公司简介<textarea name="service.short_info"  rows="" cols="" ></textarea><br>
-  公司介绍<textarea name="service.com_info"  id="editor1" rows="" cols="" ></textarea><br>
-  <input type="submit" value="重置"><input type="submit" value="添加服务">
+<s:textfield id="com_url" name="service.com_url" label="公司链接"></s:textfield><br>
+<s:file id="image" label="公司图片" name="imageService.image"></s:file><br>
+<s:textarea id="short_info" name="service.short_info" rows="5" cols="50"  label="公司简介"></s:textarea><br>
+<s:textarea  name="service.com_info"  id="editor1" rows="" cols="" label="公司介绍"></s:textarea><br>
+ <s:reset value="重置"/><s:submit value="添加服务"/>
   
-  </form>
+  </s:form>
   <ckfinder:setupCKEditor basePath="/tinajianwang/ckfinder/"
 			editor="editor1" />
 		<ckeditor:replace replace="editor1"

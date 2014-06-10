@@ -80,11 +80,12 @@
   </div>
   <br><br>
   <div class="form-group">
-    <label for="input2" class="col-sm-2 control-label">项目组介绍</label><br>
+    <label for="input2" class="col-sm-2 control-label">项目组介绍--------></label><br><br><br><br>
     <div class="col-sm-10">
       ${team.decl }
     </div> 
   </div>
+  <br>
 <center><a href="ming/team_listTeamById?team_id=${team.team_id }"> <button type="button" data-loading-text="正在加载..." class="btn btn-primary">
          申请加入</button></a></center>
     

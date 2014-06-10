@@ -35,8 +35,8 @@ public class ProjectService {
 	return projectList;
 	}
 	//方法六
-	public ArrayList listallmyProject(){
-		projectList=prod.listallmyProject();
+	public ArrayList listallmyProject(int userId){
+		projectList=prod.listallmyProject(userId);
 		System.out.println("Service中的查询个人所有项目的方法：");
 	return projectList;
 	}

@@ -4,10 +4,16 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
+import sun.org.mozilla.javascript.internal.Context;
+import sun.org.mozilla.javascript.internal.ContextAction;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.tianjian.model.Team;
 import com.tianjian.model.TeamApply;
 import com.tianjian.model.TeamUser;
+import com.tianjian.model.User;
 import com.tianjian.service.TeamService;
+import com.tianjian.service.UserService;
 import com.tianjian.util.Picture;
 
 public class TeamAction {
@@ -99,12 +105,12 @@ public class TeamAction {
 	public void setId(int id) {
 		this.id = id;
 	}
-	//²éÑ¯ÏîÄ¿×éĞÅÏ¢ ¼°³ÉÔ±ÈËÊı
+	//ï¿½ï¿½Ñ¯ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ï¢ ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½
 	public String listTeam(){
 		service=new TeamService();
 		teamList=service.listTeam();
-		teamUserCount=service.listTeamUserCount(team_id)+1;
-		System.out.println("³É¹¦£¡");
+//		teamUserCount=service.listTeamUserCount(team_id)+1;
+		System.out.println("ï¿½É¹ï¿½ï¿½ï¿½");
 		return "listTeam";
 		
 	}
@@ -122,13 +128,13 @@ public class TeamAction {
 		//listUserById
 		return "listTeamDetail";
 	}
-	//Ìí¼Ó£¨´´½¨)ÏîÄ¿×é
+	//ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½Ä¿ï¿½ï¿½
 	public String addTeam(){
 		Picture uplod=new Picture();
 		String picName=uplod.addPicture(picture, pictureFileName, pictureContentType);
 		team.setTeam_picture(picName);
 		service=new TeamService();
-		System.out.println("daozhemei a ");
+		System.out.println("daozhemei a "+team);
 		boolean flat=service.addTeam(team);
 		if(flat){
 			return "addTeam";
@@ -136,7 +142,7 @@ public class TeamAction {
 		return "fail";
 	}
 	
-	//ÔÚ´ËÏîÄ¿×éÖĞÌí¼ÓĞÂ³ÉÔ±
+	//ï¿½Ú´ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â³ï¿½Ô±
 	public String addTeamUser(){
 		service=new TeamService();
 		boolean flat=service.addTeamUser(teamUser);
@@ -145,13 +151,13 @@ public class TeamAction {
 		}else
 		return "fail";
 	}
-	//²é³öÔÚ´ËÏîÄ¿×éÖĞµÄËùÓĞ³ÉÔ±
+	//ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ğµï¿½ï¿½ï¿½ï¿½Ğ³ï¿½Ô±
 	public String listTeamUserByTeam(){
 		service=new TeamService();
 		teamUserList=service.listTeamUserByTeam(team_id);
 		return "listTeamUserByTeam";
 	}
-	//É¾³ıÏîÄ¿×é³ÉÔ± Í¨¹ıid 
+	//É¾ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ô± Í¨ï¿½ï¿½id 
 	public String deleteTeamUser(){
 		boolean flat=service.deleteTeamUser(id);
 		if(flat){
@@ -184,7 +190,17 @@ public class TeamAction {
 		if(flat){
 			boolean flat1=service.addTeamUser(teamUser);
 			if(flat1){
-				return "deleteApplyAndAddTeamUser";
+				
+				
+				User user=(User) ActionContext.getContext().getSession().get("User");
+				UserService userService=new UserService();
+				 user=userService.listUserByEmail(user.getEmail());
+	    		 System.out.println(user);
+	    		 int applyCount= service.listteamApplyCountInfo(user.getUser_id());//å¾€sessionä¸­æ”¾å…¥å…³äºè¯¥ç”¨æˆ·é¡¹ç›®ç»„çš„ç”³è¯·æˆå‘˜æ•°é‡ ç”¨äºæ˜¾ç¤ºåœ¨ç”¨æˆ·ä¸ªäººä¸­å¿ƒ
+	    		 ActionContext.getContext().getSession().put("applyCount", applyCount);
+				
+	    		 
+	    		 return "deleteApplyAndAddTeamUser";
 			}else return "fail";
 		}else return "fail";
 	}
@@ -192,14 +208,23 @@ public class TeamAction {
 		service=new TeamService();
 		boolean flat=service.deleteTeamApplyById(apply.getId());
 		if(flat){
-			return "deleteApply";
+			
+			User user=(User) ActionContext.getContext().getSession().get("User");
+			UserService userService=new UserService();
+			 user=userService.listUserByEmail(user.getEmail());
+    		 System.out.println(user);
+    		 int applyCount= service.listteamApplyCountInfo(user.getUser_id());//å¾€sessionä¸­æ”¾å…¥å…³äºè¯¥ç”¨æˆ·é¡¹ç›®ç»„çš„ç”³è¯·æˆå‘˜æ•°é‡ ç”¨äºæ˜¾ç¤ºåœ¨ç”¨æˆ·ä¸ªäººä¸­å¿ƒ
+    		 ActionContext.getContext().getSession().put("applyCount", applyCount);
+			
+    		 return "deleteApply";
 		}else
 		return "fail";
 	}
+	//æ ¹æ®æŸä¸ªç”¨æˆ·æŸ¥å‡ºå…³äºä»–çš„é¡¹ç›®ç»„çš„ç”³è¯·æ‰€æœ‰æ•°æ®
 	public String listTeamApplyByTeam(){
 		System.out.println("team_id"+team_id);
 		service=new TeamService();
-		applyList=service.listTeamApplyByTeam(team_id);
+		applyList=service.listTeamApplyByUser(team_id);
 		return "listTeamApplyByTeam";
 	}
 }

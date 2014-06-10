@@ -12,6 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <base href="<%=basePath%>">
 <title></title>
 <meta charset="utf-8">
+<link href="front/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="front/css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="front/css/style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="front/css/layout.css" type="text/css" media="screen">
@@ -61,15 +62,16 @@ a{
 					<nav>
 						<ul class="menu">
 						  <li><a href="index.html">Home Page</a></li>
-						  <li><a class="active" href="xpj/project_queryProject">Order and Invest</a></li>
+						  <li><a  href="xpj/project_queryProject">Order and Invest</a></li>
 						  <li><a href="services.html">Audit Accounts</a></li>
 						  <li><a href="ming/team_listTeam">Join Projects</a></li>
-						  <li class="last-item"><a href="contacts.html">Submit Project</a></li>
+						  <li class="last-item"><a class="active" href="contacts.html">Submit Project</a></li>
 						</ul>
 					</nav>
 				</div>
 			</header>
 <!-- content -->
+
 <%@include file="addTeamcon.jsp"  %>
 <!-- footer -->
 			<%@include file="footer.jsp" %>

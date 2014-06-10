@@ -1,12 +1,15 @@
 eclipse.preferences.version=1
+encoding//WebRoot/back/js/service.js=UTF-8
 encoding//WebRoot/back/pages/listallmyProject.jsp=UTF-8
 encoding//WebRoot/back/pages/listdetailbyid.jsp=UTF-8
 encoding//WebRoot/back/pages/updatesuccess.jsp=UTF-8
-encoding//WebRoot/index.jsp=GBK
+encoding//WebRoot/front/css/Service.css=UTF-8
 encoding//src/com/tianjian/action/ProjectAction.java=UTF-8
 encoding//src/com/tianjian/action/ServiceAction.java=UTF-8
 encoding//src/com/tianjian/dao/ProjectDao.java=UTF-8
 encoding//src/com/tianjian/dao/SalePreDao.java=UTF-8
+encoding//src/com/tianjian/dao/ServiceDao.java=UTF-8
 encoding//src/com/tianjian/service/ProjectService.java=UTF-8
 encoding//src/com/tianjian/test/Test.java=UTF-8
 encoding//src/com/tianjian/util/Picture.java=UTF-8
+encoding/<project>=UTF-8

@@ -25,15 +25,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
  
-    <div>
-    <s:property value="service.ser_id"/>
-    <s:property value="service.com_name"/>
-    <s:property value="service.score"/>
-    <img src="<s:property value="service.com_picture"/>"/>
-    
-    <s:property value="service.com_info" escape="false"/>
-    <s:property value="service.com_url"/>
-    <s:property value="service.short_info" />
-    </div>
+    <div >
+			<div>
+		<a href=""> <s:property value="service.ser_type.type_name" />服务</a>
+			</div>
+			<div>
+				<h3>
+					<s:property value="service.com_name" />
+				</h3>
+			<p>服务分数：<s:property value="service.score" /></p>
+      <p> <a href="<s:property value="service.com_url" />" target="_blank"></a></p>
+      <img alt="<s:property value="service.com_name" />" src="<s:property value="service.com_picture" />" width="300px"height="200px">
+      <p><s:property value="service.short_info" escape="false" /></p>
+      <p><s:property value="service.com_info" escape="false" /></p>
+      </div>
+			</div>
   </body>
 </html>

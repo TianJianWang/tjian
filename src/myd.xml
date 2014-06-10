@@ -17,13 +17,13 @@
 
 <!--忘记密码-->
 <action name="UserAction_forgetPassword" class="com.tianjian.action.UserAction" method="forgetPassword">
-<result name="success">/front/pages/changePasssword.jsp</result>
+<result name="success" type="redirect">/front/pages/changePasssword.jsp</result>
 <result name="failure">/front/pages/fail.jsp</result>
 </action>
 
 <!--改变密码-->
  <action name="UserAction_changePassword" class="com.tianjian.action.UserAction" method="changePassword">
-<result name="success">/front/pages/succ.jsp</result>
+<result name="success" type="redirect">/front/pages/succ.jsp</result>
 <result name="failure">/front/pages/fail.jsp</result>
 </action>
 
@@ -35,7 +35,7 @@
 
 <!--按邮箱查找用户-->
 <action name="UserAction_listUserByEmail" class="com.tianjian.action.UserAction" method="listUser">
-<result name="success">/front/pages/userInfo.jsp</result>
+<result name="success">/front/pages/myuserinfo.jsp</result>
 <result name="failure">/front/pages/fail.jsp</result>
 </action>
 

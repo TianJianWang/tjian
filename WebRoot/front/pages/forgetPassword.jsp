@@ -34,9 +34,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/FF-cash.js" type="text/javascript"></script>
 <script src="http://a.tbcdn.cn/apps/top/x/sdk.js?appkey=21784827"></script>
  <script type="text/javascript">
+     var code;  
   function createCode(){ 
 			
-			var code ;
+		
 		code = new Array();
 		var codeLength = 4;//验证码的长度
 		var checkCode = document.getElementById("checkCode");
@@ -55,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 
 		function validate () {
-		var inputCode = document.getElementById("input1").value.toUpperCase();
+		var inputCode = document.getElementById("code").value.toUpperCase();
 
 		if(inputCode.length <=0) {
 		   alert("请输入验证码！");
@@ -143,24 +144,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <form action="user/UserAction_forgetPassword" class="form-horizontal"  
 						  role="form"  enctype="multipart/form-data" method="post" style="margin-top: 70px;margin-left: 50px;padding-left: 50px">
 							<div class="form-group">
-								<label for="inputEmail3" class="col-sm-2 control-label">邮箱：</label>
+								<label for="inputEmail1" class="col-sm-2 control-label">邮箱：</label>
 								<div class="col-sm-10">
-									<input type="email" class="form-control" name="user.email" id="inputEmail"
-										placeholder="Email" style="width: 50%"  value="" />
+									<input type="email" class="form-control" name="user.email" id="email"
+										placeholder="Email" style="width: 50%"   />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputPassword3" class="col-sm-2 control-label">真实姓名:</label>
+								<label for="inputPassword2" class="col-sm-2 control-label">真实姓名:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" name="user.realname" d="input1"
-										placeholder="真实姓名" style="width: 50%"    value=""/>
+ 
+									  <input type="text" class="form-control" name="user.realname"  id="realname"
+										placeholder="真实姓名"  style="width: 50%"   /> 
 								</div>
 							</div>
 							 
 							 <div class="form-group">
 								<label for="inputPassword3" class="col-sm-2 control-label">校验码:</label>
 								<div class="col-sm-10">
-								<input type="text" class="form-control" name="user.realname" id="Code"
+								<input type="text" class="form-control"   id="code"
 										placeholder="校验码" style="width: 50%;margin-bottom: 20px"  onblur="validate();"   value=""/>
  
                             <input type="button" id="checkCode" class="code" style="width:100px;height: 30px;float: none;" onclick="createCode()"  /> 

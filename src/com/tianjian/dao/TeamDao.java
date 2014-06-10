@@ -20,7 +20,7 @@ public class TeamDao {
 	private ArrayList<TeamUser> teamUserList;
 	private ArrayList<TeamApply> applyList;
 	
-	//ÓÉteam_id²éÑ¯ÏîÄ¿×éÐÅÏ¢ 
+	//ï¿½ï¿½team_idï¿½ï¿½Ñ¯ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ï¢ 
 	public Team listTeamById(int team_id){
 		System.out.println("team_id:"+team_id);
 	    Session session=HibernateSessionFactory.getsSession();
@@ -30,10 +30,10 @@ public class TeamDao {
 	    team= (Team) session.createQuery("from Team where  team_id=?").setParameter(0,team_id).uniqueResult();
 	   
 	    	
-	        System.out.println("¼¯ºÏÖÐ"+team.getProject().getPro_title());
+	        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+team.getProject().getPro_title());
 
 	
-	    System.out.println("¼¯ºÏÖÐ"+team.getUser().getEmail());
+	    System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+team.getUser().getEmail());
 	   try {
 		ts.commit();
 	} catch ( Exception e){
@@ -43,7 +43,7 @@ public class TeamDao {
 		return team;
 		
 	}
-	//Ìí¼ÓÏîÄ¿×é
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½
 	public boolean addTeam(Team team){
 		boolean flat=false;
 	    Session session=HibernateSessionFactory.getsSession();
@@ -59,7 +59,7 @@ public class TeamDao {
 		return flat;
 		
 	}
-	//ÐÞ¸ÄÏîÄ¿×éµÄÐÅÏ¢
+	//ï¿½Þ¸ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	public boolean updateTeam(Team team){
 	    boolean flat=false;
 		Session session=HibernateSessionFactory.getsSession();
@@ -107,7 +107,7 @@ public class TeamDao {
 		  Session session=HibernateSessionFactory.getsSession();
 		    Transaction ts= session.beginTransaction();
 		    teamUserList=(ArrayList<TeamUser>) session.createQuery("from TeamUser where  team_id=?").setParameter(0, team_id).list();
-		    System.out.println("¼¯ºÏÖÐ"+teamUser);
+		    System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+teamUser);
 		   try {
 			ts.commit();
 		} catch ( Exception e) {
@@ -122,6 +122,21 @@ public class TeamDao {
 		teamList=(ArrayList<Team>) session.createQuery("from Team").list();
 		for(Team team:teamList){
 		team.getProject().getPro_title();
+		}
+		try {
+			ts.commit();
+		} catch ( Exception e) {
+			e.printStackTrace();
+		}  
+		session.close();
+		return teamList;
+	}
+	public ArrayList<Team> listMyTeam(int userId){
+		Session session=HibernateSessionFactory.getsSession();
+		Transaction ts= session.beginTransaction();
+		teamList=(ArrayList<Team>) session.createQuery("from Team where header=?").setParameter(0, userId).list();
+		for(Team team:teamList){
+			team.getProject().getPro_title();
 		}
 		try {
 			ts.commit();
@@ -171,13 +186,27 @@ public class TeamDao {
 		System.out.println("team_id:"+team_id);
 	    Session session=HibernateSessionFactory.getsSession();
 	    Transaction ts= session.beginTransaction();
-	   long teamUserCount=  (Long) session.createQuery("select count(id) from Team where  team_id=?").setParameter(0,team_id).uniqueResult();
+	   long teamUserCount=  (Long) session.createQuery("select count(id) from TeamUser where  team_id=?").setParameter(0,team_id).uniqueResult();
 	   try {
 		ts.commit();
 	} catch ( Exception e){
 		e.printStackTrace();
 	}  
 	    session.close();
+		return teamUserCount;
+		
+	}
+	public long listTeamApplyCountByTeam(int team_id){
+		System.out.println("team_id:"+team_id);
+		Session session=HibernateSessionFactory.getsSession();
+		Transaction ts= session.beginTransaction();
+		long teamUserCount=  (Long) session.createQuery("select count(id) from TeamApply where  team_id=?").setParameter(0,team_id).uniqueResult();
+		try {
+			ts.commit();
+		} catch ( Exception e){
+			e.printStackTrace();
+		}  
+		session.close();
 		return teamUserCount;
 		
 	}

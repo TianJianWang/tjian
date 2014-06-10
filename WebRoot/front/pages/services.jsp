@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -24,6 +25,7 @@
 <link rel="stylesheet" href="front/css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="front/css/style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="front/css/layout.css" type="text/css" media="screen">
+<link href="front/css/Service.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="front/js/jquery-1.6.min.js"></script>
 <script src="front/js/cufon-yui.js" type="text/javascript"></script>
 <script src="front/js/cufon-replace.js" type="text/javascript"></script>
@@ -64,8 +66,9 @@
 					<nav>
 						<ul class="menu">
 						  <li><a  href="front/pages/index.jsp">Home Page</a></li>
-						  <li><a href="front/pages/list.jsp">Order and Invest</a></li>
-						  <li><a href="front/pages/services.jsp" class="active">Audit Accounts</a></li>
+						  <li><a  href="xpj/project_queryProject">Order
+									and Invest</a></li>
+						  <li><a class="active" href="service/service_queryFrontBigTypeDisplayShortService">Service</a></li>
 						  <li><a href="ming/team_listTeam">Join Projects</a></li>
 						  <li class="last-item"><a href="front/pages/contacts.jsp">Submit Project</a></li>
 						</ul>
@@ -74,129 +77,107 @@
 			</header>
 <!-- content --><div class="ic">More Website Templates @ <a href="http://www.cssmoban.com/" >网页模板</a>!</div>
 			<section id="content">
-				<div class="padding">
-					<div class="indent">
-						<h2>Our Services</h2>
-						<div class="wrapper indent-bot">
-							<div class="col-3">
-								<div class="wrapper">
-									<figure class="img-indent4"><img src="front/images/page3-img1.png" alt="" /></figure>
-									<div class="extra-wrap">
-										<h6>Management</h6>
-										Lorem ipsum dolor sit amet, consectetur adipisicing eitseo eiusmod tempor incididunt ut labore et<br> dolore magna aliqua.
-									</div>
-								</div>
-							</div>
-							<div class="col-4">
-								<div class="wrapper">
-									<figure class="img-indent3"><img src="front/images/page3-img2.png" alt="" /></figure>
-									<div class="extra-wrap">
-										<h6>Planning</h6>
-										Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="wrapper indent-bot2">
-							<div class="col-3">
-								<div class="wrapper">
-									<figure class="img-indent3"><img src="front/images/page3-img3.png" alt="" /></figure>
-									<div class="extra-wrap">
-										<h6>Banking</h6>
-										Duis aute irure dolor in reprehenderit in voluptate velit esse cillum enean nisi nulla, tempor non lobortis et, consequat quis tellus dolore.
-									</div>
-								</div>
-							</div>
-							<div class="col-4">
-								<div class="wrapper">
-									<figure class="img-indent"><img src="front/images/page3-img4.png" alt="" /></figure>
-									<div class="extra-wrap">
-										<h6>Tax Services</h6>
-										Veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia cillum enean nisi nulla voluptas.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="wrapper p3">
-							<div class="col-3">
-								<div class="wrapper">
-									<figure class="img-indent3"><img src="front/images/page3-img5.png" alt="" /></figure>
-									<div class="extra-wrap">
-										<h6>Guarantee</h6>
-										Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-									</div>
-								</div>
-							</div>
-							<div class="col-4">
-								<div class="wrapper">
-									<figure class="img-indent"><img src="front/images/page3-img6.png" alt="" /></figure>
-									<div class="extra-wrap">
-										<h6>Coaching</h6>
-										Sit aspernatur aut odit aut fugit, sed quia conse<br>quuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-									</div>
-								</div>
-							</div>
-						</div>
+				<div id="main">
+		
+		<s:iterator value="serDisplayList">
+			<div class="medium">
+				<div class="top">
+					<div id="topleft">
+						<a
+							href="service/service_queryFrontBigTypeShortService?nowPage=1&type_id=<s:property
+								value="bigtype.bigtype_id" />"
+							target="_blank"><s:property value="bigtype.bigtype_name" />
+						</a>
 					</div>
-					<div class="box-bg">
-						<div class="wrapper">
-							<div class="col-1">
-								<div class="box first">
-									<div class="pad">
-										<div class="wrapper indent-bot">
-											<strong class="numb img-indent2">01</strong>
-											<div class="extra-wrap">
-												<h3 class="color-1"><strong>Careful</strong>Analysis</h3>
-											</div>
-										</div>
-										<div class="wrapper">
-											<a class="button img-indent-r" href="#">>></a>
-											<div class="extra-wrap">
-												The most of the most professional <br/>最多的最专业人士评价.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-1">
-								<div class="box second">
-									<div class="pad">
-										<div class="wrapper indent-bot">
-											<strong class="numb img-indent2">02</strong>
-											<div class="extra-wrap">
-												<h3 class="color-2"><strong>Quick</strong>Research</h3>
-											</div>
-										</div>
-										<div class="wrapper">
-											<a class="button img-indent-r" href="#"></a>
-											<div class="extra-wrap">
-												The quickest for the most outstanding creative <br/>最快的最优秀创意孵化.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-2">
-								<div class="box third">
-									<div class="pad">
-										<div class="wrapper indent-bot">
-											<strong class="numb img-indent2">03</strong>
-											<div class="extra-wrap">
-												<h3 class="color-3"><strong>New</strong>Strategies</h3>
-											</div>
-										</div>
-										<div class="wrapper">
-											<a class="button img-indent-r" href="#">>></a>
-											<div class="extra-wrap">
-												The most transparent and the most trusted finances <br/>最透明最可信的财务管理.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+
+					<div id="topright">
+						<span>热门推荐：</span>
+						<s:iterator value="smallTypelist" status="st">
+					
+							<a
+								href="service/service_queryFrontSmallTypeShortService?nowPage=1&type_id=<s:property
+								value="smalltype_id" />"
+								target="_blank"><s:property value="smalltype_name" /> </a>
+								<s:if test="!#st.last">
+							<span>|</span>
+							</s:if>
+						
+						</s:iterator>
+						<span style=" margin-left:50px; padding-right:10px"><a
+							href="service/service_queryFrontBigTypeShortService?nowPage=1&type_id=<s:property
+								value="bigtype.bigtype_id" />"
+							target="_blank">更多</a> </span>
 					</div>
 				</div>
+				
+				<div class="bottom">
+					<s:iterator value="servicelist" status="st">
+					<s:if test="#st.count==1">
+						<div class="small" style=" margin-left:0px;text-align: left;">
+							<div class="tinyimg">
+								<a
+									href="service/service_queryFrontDetailService?ser_id=<s:property value="ser_id"/>"
+									target="_blank" title="<s:property value="com_name"/>"><img
+									src="<s:property value="com_picture"/>" width="173"
+									height="122" alt="<s:property value="com_name"/>" /> </a>
+							</div>
+							<div class="tinyname">名字：
+								<a
+									href="service/service_queryFrontDetailService?ser_id=<s:property value="ser_id"/>"
+									target="_blank" title="<s:property value="com_name"/>"><s:property
+										value="com_name" /> </a>
+							</div>
+							<div class="tinyintro">
+								简介：
+								<s:property value="short_info" />
+							</div>
+							<div class="tinygrade">
+								分数：<span style="color:#ff6600">
+								<s:property value="score" /></span>
+							</div>
+							<div class="tinyurl">
+								<a href="<s:property value="com_url"/>" target="_blank">
+									公司的链接</a>
+							</div>
+						</div>
+						</s:if>
+						<s:if test="#st.count!=1">
+						<div class="small" >
+							<div class="tinyimg">
+								<a
+									href="service/service_queryFrontDetailService?ser_id=<s:property value="ser_id"/>"
+									target="_blank" title="<s:property value="com_name"/>"><img
+									src="<s:property value="com_picture"/>" width="173"
+									height="122" alt="<s:property value="com_name"/>" /> </a>
+							</div>
+							<div class="tinyname">名字：
+								<a
+									href="service/service_queryFrontDetailService?ser_id=<s:property value="ser_id"/>"
+									target="_blank" title="<s:property value="com_name"/>"><s:property
+										value="com_name" /> </a>
+							</div>
+							<div class="tinyintro">
+								简介：
+								<s:property value="short_info" />
+							</div>
+							<div class="tinygrade">
+								分数：<span style=" color:#ff6600">
+								<s:property value="score" /></span>
+							</div>
+							<div class="tinyurl">
+								<a href="<s:property value="com_url"/>" target="_blank">
+									公司的链接</a>
+							</div>
+						</div>
+						</s:if>
+					</s:iterator>
+					
+				</div>
+			</div>
+		</s:iterator>
+	
+		
+	</div>
 			</section>
 <!-- footer -->
 			<footer>

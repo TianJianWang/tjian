@@ -24,7 +24,7 @@
 </action>
 
 <action name="team_*" class="com.tianjian.action.TeamAction" method="{1}">
-    <result name="addTeam">/addTeam.jsp</result>
+    <result name="addTeam" type="redirect">/front/pages/addTeam.jsp</result>
     <result name="listTeam">/front/pages/listAllTeam.jsp</result>
     <result name="listTeamById">/front/pages/addTeamApply.jsp</result>
     <result name="listTeamUserByTeam">/front/frontpages/teamUserList.jsp</result>

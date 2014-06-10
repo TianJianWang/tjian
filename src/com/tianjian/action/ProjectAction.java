@@ -102,7 +102,7 @@ public String queryProject(){
 		return "querysuccess";
 	}
 public String listallmyProject(){
-		projectList=pros.listallmyProject();
+		projectList=pros.listallmyProject(1);
 		System.out.println("action 中 查寻个人所有项目的方法 " +projectList);
 	    ServletActionContext.getRequest().setAttribute("count", 10);
 		return "listallmyProject";

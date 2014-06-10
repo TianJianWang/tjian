@@ -246,7 +246,7 @@ public class ProjectDao {
 	 * 方法六
 	 * 此处需要得到用户的id作为参数传入，现在测试id记为 1
 	 * */
-	public ArrayList listallmyProject(){
+	public ArrayList listallmyProject(int userId){
 		ArrayList projectList=null;
 		
 		  HibernateSessionFactory hibernateSessionFactory=new HibernateSessionFactory();

@@ -51,9 +51,7 @@
 												</a></li>
 												<li class="project-function"><a
 													href="/forums/project-297159" title="此项目有1个话题"
-													class="project-p-on">所需人数：<s:property  value="#list.num" /></a> <a
-													href="/projects/297159/backers" title="11用户支持此项目"
-													class="project-g-on">加入人数：${teamUserCount }</a> <a
+													class="project-p-on">所需人数<s:property  value="#list.num" /></a>  <a
 													href="/projects/discover/10_0_0_0"
 													class="project-g-running">筹资中</a></li>
 												<li class="project-list-stats">
@@ -62,15 +60,7 @@
 															class="projectpledged projectpledged-failure"></div>
 													</div>
 													<div class="projectstats">
-														<p class="widtha">
-															<strong>0%</strong>已达到
-														</p>
-														<p class="widthb">
-															<strong><span><b>¥</b>245</span></strong>已获支持
-														</p>
-														<p class="widthd">
-															<strong><s:property  value="#list.project.pro_endDate" /></strong>结束时间
-														</p>
+														
 													</div>
 												</li>
 											</ul>
