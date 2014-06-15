@@ -62,6 +62,8 @@
            nickname : QC.String.escHTML(reqData.nickname), //做xss过滤
            figureurl : reqData.figureurl
        }));
+	   window.close();
+        window.opener.location.reload();
    }, function(opts){//注销成功
         // alert('QQ登录 注销成功');
    }

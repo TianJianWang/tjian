@@ -5,17 +5,19 @@
 					<h1>
 						<a class="logo" href="front/pages/index.jsp">梦塔Mengta.org</a>
 						<strong class="slog">The most creative ideas</strong>
-					</h1>
+					</h1><span id="login">
 					<c:if test="${empty sessionScope.User.email }">
                     <a href="#" onclick="showmodal();" style="font: bolder;color: pink;font-style: normal;margin-right: 5px">登陆</a>|<a href="front/pages/regist.jsp" style="color:orange;margin-right: 5px;margin-left: 5px">注册</a>|<a href="front/pages/forgetPassword.jsp" style="color:deepskyblue padding-left: 10px">忘记密码</a>
 				</c:if>
 				<c:if test="${!empty sessionScope.User.email}">您好:<a href="front/pages/usercenter.jsp" onclick="return isLogin(${User.email})">${sessionScope.User.email }</a>|<a
 						href="user/UserAction_exitLogin">退出</a>
-				</c:if>
-<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101084219" data-redirecturi="http://tjian.org" charset="utf-8" ></script>
+				</c:if></span>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101084219" data-redirecturi="http://tjian.org/qq.jsp" charset="utf-8" ></script>
 
 <span id="qqLoginBtn"></span>
 <script type="text/javascript">
+if(QC.Login.check()){document.getElementById("login").style.display="none";}
+else{document.getElementById("login").style.display="inline";}
  QC.Login({
   btnId : "qqLoginBtn",//插入按钮的html标签id
   size : "A_M",//按钮尺寸

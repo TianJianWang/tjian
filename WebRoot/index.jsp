@@ -13,12 +13,10 @@
 <base href="<%=basePath%>">
 
 <title>天鉴网--大学生自助创业平台</title>
-<meta charset="utf-8">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="天鉴,自助创业,创投">
-<meta http-equiv="description" content="天鉴网是整合大学知识分子力量，以创意促进文明发展的交流平台，集众筹、鉴定、协作与一体，应用技术大学联盟官方平台，创意与创投门户">
+<meta charset="utf-8"/>
+<meta property="qc:admins" content="3337027671166727" />
+<meta http-equiv="keywords" content="天鉴,自助创业,创投"/>
+<meta http-equiv="description" content="天鉴网是整合大学知识分子力量，以创意促进文明发展的交流平台，集众筹、鉴定、协作与一体，应用技术大学联盟官方平台，创意与创投门户"/>
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
