@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -11,13 +12,13 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>My JSP 'list.jsp' starting page</title>
+<title>天鉴网--大学生自助创业平台</title>
 <meta charset="utf-8">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
+<meta http-equiv="keywords" content="天鉴,自助创业,创投">
+<meta http-equiv="description" content="天鉴网--大学生自助创业平台，应用技术大学联盟官方平台，创意与创投门户">
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -56,7 +57,7 @@ function showmodal()
 }  
 
 	  function isLogin(email){
-	    if(email==null){
+	    if(email==null||email==""){
 	    alert("您还没有登陆，请登录！");
 	    return false;
 	    }else{
@@ -77,11 +78,11 @@ function showmodal()
 		<div class="row-2">
 					<nav>
 						<ul class="menu">
-						  <li><a class="active" href="front/pages/index.jsp">Home Page</a></li>
-						  <li><a href="xpj/project_queryProject">Order and Invest</a></li>
-						  <li><a href="service/service_queryFrontBigTypeDisplayShortService">Service</a></li>
-						  <li><a href="ming/team_listTeam">Join Projects</a></li>
-						  <li class="last-item"><a href="front/pages/usercenter.jsp" onclick="return isLogin(${User.email})">user center</a></li>
+						  <li><a class="active" href="index.jsp">Home Page<br/>主页</a></li>
+						  <li><a href="xpj/project_queryProject">Order and Invest<br/>预订与投资</a></a></li>
+						  <li><a href="service/service_queryFrontBigTypeDisplayShortService">Service<br/>服务</a></li>
+						  <li><a href="ming/team_listTeam">Join Projects<br/>加入项目</a></li>
+						  <li class="last-item"><a href="front/pages/submit.jsp" onclick="return isLogin(${User.email})">Submit idea<br/>发布创意</a></li>
 						</ul>
 					</nav>
 				</div>

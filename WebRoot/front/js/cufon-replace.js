@@ -1,5 +1,5 @@
 Cufon.replace('.slog', { fontFamily: 'Open Sans', hover:true });
-Cufon.replace('.menu li a', { fontFamily: 'Open Sans', hover:true });
+Cufon.replace('.menu li a', { fontFamily: '宋体', hover:true });
 Cufon.replace('.b1', { fontFamily: 'Open Sans', hover:true });
 Cufon.replace('.b2', { fontFamily: 'Open Sans Semibold', hover:true });
 Cufon.replace('.b3', { fontFamily: '宋体', hover:true });
