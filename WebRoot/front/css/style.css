@@ -34,10 +34,15 @@ p {margin-bottom:18px}
 /* boxes */
 .margin-bot {margin-bottom:35px}
 .spacing {margin-right:35px}
+.text1{background-color:#FF8;
+width:580px;
+padding-left: 10px;
+font-size: 13pt;
+line-height:16pt}
 .indent {padding:0 0 0px 32px}
 .indent2 {
 	padding-top: 10px;
-	font-size: 18pt;
+	font-size: 16pt;
 	line-height:20pt
 }
 .indent3 {padding-top:38px}
