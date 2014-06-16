@@ -10,7 +10,7 @@
      <constant name="struts.i18n.encoding" value="utf-8"/>
      <!-- 上传的全部图片的最大限制-->
      <constant name="struts.multipart.maxSize" value="1024102400"/>
-<constant name="struts.multipart.saveDir" value="/temp" />
+<constant name="struts.multipart.saveDir" value="/tmp" />
 <package name="xpj" namespace="/xpj" extends="struts-default">
 <action name="project_*" class="com.tianjian.action.ProjectAction" method="{1}">
 <result name="adderror">/back/pages/addProject.jsp</result>
