@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -60,7 +61,7 @@ public class Picture extends ActionSupport{
 		this.picture = picture;
 	}
 	public String addPicture(File picture,String pictureFileName, String pictureContentType) {
-		System.out.println("杩涘叆鍑芥暟");
+		//System.out.println("杩涘叆鍑芥暟");
 		// TODO Auto-generated method stub
 	    InputStream in = null;
 		try {
@@ -71,6 +72,8 @@ public class Picture extends ActionSupport{
 		}
 		HttpServletRequest request=ServletActionContext.getRequest();
 		String root=request.getRealPath("/myimages");
+		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+		pictureFileName=df.format(new Date())+pictureFileName;
 		newFile=new File(root,pictureFileName);
 		 fileName=newFile.getName();
 		try {

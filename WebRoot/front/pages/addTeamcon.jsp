@@ -77,10 +77,10 @@
 										<div class="editorarea">
 
 												<textarea cols="80" id="editor1" name="team.decl" rows="10"></textarea>
-											<ckfinder:setupCKEditor basePath="/tianjianwang/ckfinder/"
+											<ckfinder:setupCKEditor basePath="/ckfinder/"
 												editor="editor1" />
 											<ckeditor:replace replace="editor1"
-												basePath="/tianjianwang/ckeditor/" />
+												basePath="/ckeditor/" />
 										</div></td>
 								</tr>
 								<tr>

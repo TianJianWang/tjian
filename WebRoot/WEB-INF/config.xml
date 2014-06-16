@@ -1,7 +1,7 @@
 <config>
 	<enabled>true</enabled>
 	<baseDir></baseDir>
-	<baseURL>/tianjianwang/userfiles/</baseURL>
+	<baseURL>/userfiles/</baseURL>
 	<licenseKey></licenseKey>
 	<licenseName></licenseName>
 	<imgWidth>1600</imgWidth>
